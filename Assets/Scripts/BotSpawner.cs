@@ -9,10 +9,12 @@ public class BotSpawner : JamBase<BotSpawner> {
     public List<Collider> SpawnPoints;
     public int CurrentWave = -1;
     public int BotsCount = 3; //todo: moar complicated logic
-    
+
+    public bool FirstWaveSpawned => CurrentWave != -1;
     public float NextWaveTime => SpawnRate - (Time.time - _LastWaveTime);
     public event Action<int> onWaveSpawnStarted = _ => { };
-    
+    public Vector3 LastSpawnPoint { get; private set; }
+
     private float _LastWaveTime;
 
     private void Start() {
@@ -32,6 +34,7 @@ public class BotSpawner : JamBase<BotSpawner> {
             botHealth.HealthCurrent = 10;
         }
         _LastWaveTime = Time.time;
+        LastSpawnPoint = bounds.center;
         onWaveSpawnStarted.Invoke(CurrentWave);
     }
 }
