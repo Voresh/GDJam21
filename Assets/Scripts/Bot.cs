@@ -21,12 +21,15 @@ public class Bot : MonoBehaviour {
         if (health > 0)
             return;
         Animator.SetTrigger("Died");
+        GetComponent<Collider>().enabled = false;
         _Dead = true;
     }
 
     private void Update() {
-        if (Health.HealthCurrent <= 0)
+        if (_Dead) {
+            BulletSpawner.enabled = false;
             return;
+        }
         var direction = Target.transform.position - transform.position;
         if (Target.GetComponent<Health>().HealthCurrent > 0 && direction.magnitude < DetectionRadius) {
             BulletSpawner.enabled = true;

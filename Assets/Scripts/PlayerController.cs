@@ -24,6 +24,7 @@ public class PlayerController : JamBase<PlayerController> {
             Animator.SetTrigger("Died");
             _Dead = true;
             BulletSpawner.enabled = false;
+            GetComponent<Collider>().enabled = false;
         }
     }
 
