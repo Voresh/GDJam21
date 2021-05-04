@@ -11,25 +11,20 @@ public class Bot : MonoBehaviour {
     public GameObject Target;
     public Health Health;
 
-    private bool _Dead;
-    
     private void Start() {
         Target = PlayerController.Instance.gameObject;
-        Health.onHealthUpdated += OnHealthUpdated;
+        Health.onDeadStatusUpdated += OnDeadStatusUpdated;
     }
 
-    private void OnHealthUpdated(int health) {
-        if (_Dead)
-            return;
-        if (health > 0)
-            return;
-        Animator.SetTrigger("Died");
-        GetComponent<Collider>().enabled = false;
-        _Dead = true;
+    private void OnDeadStatusUpdated(bool dead) {
+        if (dead) {
+            Animator.SetTrigger("Died");
+            GetComponent<Collider>().enabled = false;
+        }
     }
 
     private void Update() {
-        if (_Dead) {
+        if (Health.Dead) {
             BulletSpawner.enabled = false;
             return;
         }
