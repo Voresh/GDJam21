@@ -10,6 +10,9 @@ public class PlayerController : JamBase<PlayerController> {
     private static readonly int _Speed = Animator.StringToHash("Speed");
     public Vector3 Position => _Transform.position;
 
+    public LayerMask EnemyLayer; 
+    public float AttackRadius = 500f;
+
     private bool _Dead;
 
     public event Action onDied = () => { };
@@ -33,6 +36,11 @@ public class PlayerController : JamBase<PlayerController> {
     }
 
     private void Update() {
+        Collider[] TargetColliders = Physics.OverlapSphere(transform.position, AttackRadius, EnemyLayer);
+        if (TargetColliders.Length != 0) {
+            Debug.LogError(TargetColliders);
+        }
+       
         if (_Dead)
             return;
         var direction = Vector3.zero;
