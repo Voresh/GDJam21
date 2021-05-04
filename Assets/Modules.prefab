@@ -64,6 +64,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RepairedView: {fileID: 7327165384484356490}
   DestroyedView: {fileID: 7327165385262871435}
+  PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
+  RepairPrice: 0
 --- !u!65 &7327165383958750266
 BoxCollider:
   m_ObjectHideFlags: 0

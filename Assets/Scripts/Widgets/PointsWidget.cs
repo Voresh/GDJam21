@@ -9,12 +9,12 @@ public class PointsWidget : MonoBehaviour {
     private float _LastPointsUpdateTime;
 
     private void Start() {
-        Text.text = PointsController.Instance.Points.ToString();
+        Text.text = $"Points: {PointsController.Instance.Points}";
         PointsController.Instance.onPointsUpdated += OnPointsUpdated;
     }
 
     private void OnPointsUpdated(int points) {
-        Text.text = points.ToString();
+        Text.text = $"Points: {PointsController.Instance.Points}";
         _LastPointsUpdateTime = Time.time;
     }
 

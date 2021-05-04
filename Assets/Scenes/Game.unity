@@ -936,6 +936,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7327165383958750270, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
+      propertyPath: RepairPrice
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7327165386026106489, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
       propertyPath: m_Name
       value: Modules
