@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class BotSpawner : JamBase<BotSpawner> {
     public Bot BotPrefab;
@@ -13,6 +12,7 @@ public class BotSpawner : JamBase<BotSpawner> {
     public bool FirstWaveSpawned => CurrentWave != -1;
     public float NextWaveTime => SpawnRate - (Time.time - _LastWaveTime);
     public event Action<int> onWaveSpawnStarted = _ => { };
+    public event Action<Bot> onBotSpawned = _ => { };
     public Vector3 LastSpawnPoint { get; private set; }
 
     private float _LastWaveTime;
@@ -32,6 +32,7 @@ public class BotSpawner : JamBase<BotSpawner> {
             var botHealth = botInstance.GetComponent<Health>();
             botHealth.HealthMax = 10;
             botHealth.HealthCurrent = 10;
+            onBotSpawned.Invoke(botInstance);
         }
         _LastWaveTime = Time.time;
         LastSpawnPoint = bounds.center;
