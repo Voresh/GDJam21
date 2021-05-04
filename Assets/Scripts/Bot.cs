@@ -14,6 +14,7 @@ public class Bot : MonoBehaviour {
     private bool _Dead;
     
     private void Start() {
+        BulletSpawner.enabled = true;
         Target = PlayerController.Instance.gameObject;
         Health.onHealthUpdated += OnHealthUpdated;
     }
