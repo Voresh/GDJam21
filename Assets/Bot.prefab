@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletSpawner: {fileID: 316183276152933214}
   Animator: {fileID: 4445352181464920595}
+  Speed: 2.5
   DetectionRadius: 7
+  AttackRadius: 4
   Target: {fileID: 0}
   Health: {fileID: 4102634361452438805}
 --- !u!1001 &6727855462364131389
