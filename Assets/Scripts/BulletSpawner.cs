@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class BulletSpawner : MonoBehaviour {
     public float ShootRate = 0.5f;
-    public Bullet Bullet;
+    [FormerlySerializedAs("Bullet")]
+    public Bullet BulletPrefab;
     public Transform ShootPosition;
     public Transform Shooter;
 
@@ -11,7 +13,7 @@ public class BulletSpawner : MonoBehaviour {
     private void Update() {
         if (Time.time - _LastShotTime < ShootRate)
             return;
-        var bulletInstance = Instantiate(Bullet);
+        var bulletInstance = Instantiate(BulletPrefab);
         bulletInstance.transform.position = ShootPosition.position;
         bulletInstance.transform.forward = Shooter.forward;
         bulletInstance.Owner = Shooter.gameObject;

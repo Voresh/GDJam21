@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour {
     public float Lifetime = 10f;
     public GameObject Owner;
     private float _SpawnTime;
+    public int Damage = 7;
+
 
     private void Start() {
         _SpawnTime = Time.time;
@@ -20,6 +22,9 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (Owner == other.gameObject)
             return;
+        var health = other.GetComponent<Health>();
+        if (health != null)
+            health.HealthCurrent -= Damage;
         Destroy(gameObject);
     }
 }
