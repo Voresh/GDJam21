@@ -24,6 +24,8 @@ public class Bullet : MonoBehaviour {
             return;
         if (Owner.GetComponent<Bot>() != null && other.GetComponent<Bot>() != null)
             return; //hack
+        if (Owner == PlayerController.Instance.gameObject && other.GetComponent<Module>() != null)
+            return; //hack 2
         var health = other.GetComponent<Health>();
         if (health != null)
             health.HealthCurrent -= Damage;
