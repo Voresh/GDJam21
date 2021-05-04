@@ -22,6 +22,8 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (Owner == other.gameObject)
             return;
+        if (Owner.GetComponent<Bot>() != null && other.GetComponent<Bot>() != null)
+            return; //hack
         var health = other.GetComponent<Health>();
         if (health != null)
             health.HealthCurrent -= Damage;

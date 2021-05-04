@@ -15,6 +15,7 @@ MonoBehaviour:
   Animator: {fileID: 8190671356311950343}
   Speed: 4
   Health: {fileID: 8427765721377178369}
+  BulletSpawner: {fileID: 5222279398849932618}
 --- !u!1001 &1244164029340653097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +397,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21f42c49c5824b668249b8218d7f65b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5222279398849932618 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+  m_PrefabInstance: {fileID: 1244164029340653097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190671356311950341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b1216ef6342a087944610ae7d6ec0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2644276476316008714 stripped

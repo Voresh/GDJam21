@@ -4,6 +4,7 @@ public class PlayerController : JamBase<PlayerController> {
     public Animator Animator;
     public float Speed = 4f;
     public Health Health;
+    public BulletSpawner BulletSpawner;
     private Transform _Transform;
     private static readonly int _Speed = Animator.StringToHash("Speed");
     public Vector3 Position => _Transform.position;
@@ -20,12 +21,15 @@ public class PlayerController : JamBase<PlayerController> {
         if (_Dead)
             return;
         if (health <= 0) {
-            Debug.Log("died");
+            Animator.SetTrigger("Died");
             _Dead = true;
+            BulletSpawner.enabled = false;
         }
     }
 
     private void Update() {
+        if (_Dead)
+            return;
         var direction = Vector3.zero;
         if (Input.GetKey(KeyCode.W))
             direction += Vector3.forward;

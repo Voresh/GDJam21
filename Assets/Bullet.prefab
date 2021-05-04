@@ -78,6 +78,7 @@ MonoBehaviour:
   Speed: 10
   Lifetime: 10
   Owner: {fileID: 0}
+  Damage: 1
 --- !u!1 &7386770254604054637
 GameObject:
   m_ObjectHideFlags: 0
