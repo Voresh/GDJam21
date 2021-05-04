@@ -27,6 +27,5 @@ public class Health : MonoBehaviour {
     private void Update() {
         _HealthBar.Fill = (float) HealthCurrent / HealthMax;
         _HealthBar.transform.position = transform.position + Vector3.up * HeightOffset;
-        onHealthUpdated.Invoke(HealthCurrent);
     }
 }
