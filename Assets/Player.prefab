@@ -16,6 +16,10 @@ MonoBehaviour:
   Speed: 4
   Health: {fileID: 8427765721377178369}
   BulletSpawner: {fileID: 5222279398849932618}
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  AttackRadius: 500
 --- !u!1001 &1244164029340653097
 PrefabInstance:
   m_ObjectHideFlags: 0
