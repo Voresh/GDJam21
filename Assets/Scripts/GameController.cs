@@ -16,8 +16,4 @@ public class GameController : JamBase<GameController> {
         Debug.Log($"next wave {wave + 1}");
         //todo: notification here
     }
-
-    private void Update() {
-        //todo: update wave time here
-    }
 }
