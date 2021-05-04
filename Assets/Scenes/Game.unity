@@ -276,6 +276,10 @@ PrefabInstance:
       value: Main Camera
       objectReference: {fileID: 0}
     - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
+      propertyPath: CameraRange
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
       propertyPath: CameraHeight
       value: 10
       objectReference: {fileID: 0}
