@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraSettings : MonoBehaviour
-{
+public class CameraController : JamBase<CameraController> {
     public float CameraHeight;
     public float CameraRange;
     public float CameraRotation;
