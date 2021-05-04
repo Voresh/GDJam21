@@ -3,6 +3,8 @@ using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 public class Module : MonoBehaviour {
+    public GameObject RepairedView;
+    public GameObject DestroyedView;
     private Health _Health;
 
     private void Start() {
@@ -11,6 +13,7 @@ public class Module : MonoBehaviour {
     }
 
     private void OnDeadStatusUpdated(bool dead) {
-        
+        RepairedView.SetActive(!dead);
+        DestroyedView.SetActive(dead);
     }
 }
