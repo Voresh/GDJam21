@@ -10,38 +10,28 @@ public class PlayerController : JamBase<PlayerController> {
     private static readonly int _Speed = Animator.StringToHash("Speed");
     public Vector3 Position => _Transform.position;
 
-    public LayerMask EnemyLayer; 
-    public float AttackRadius = 500f;
-
-    private bool _Dead;
-
     public event Action onDied = () => { };
     
     protected override void Awake() {
         base.Awake();
         _Transform = transform;
-        Health.onHealthUpdated += OnHealthUpdated;
+        Health.onDeadStatusUpdated += OnDeadStatusUpdated;
     }
 
-    private void OnHealthUpdated(int health) {
-        if (_Dead)
-            return;
-        if (health <= 0) {
+    private void OnDeadStatusUpdated(bool dead) {
+        if (dead) {
             Animator.SetTrigger("Died");
-            _Dead = true;
             BulletSpawner.enabled = false;
             GetComponent<Collider>().enabled = false;
             onDied.Invoke();
         }
+        else {
+            //todo: resp
+        }
     }
 
     private void Update() {
-        Collider[] TargetColliders = Physics.OverlapSphere(transform.position, AttackRadius, EnemyLayer);
-        if (TargetColliders.Length != 0) {
-            Debug.LogError(TargetColliders);
-        }
-       
-        if (_Dead)
+        if (Health.Dead)
             return;
         var direction = Vector3.zero;
 
