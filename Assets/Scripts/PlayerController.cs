@@ -36,6 +36,11 @@ public class PlayerController : JamBase<PlayerController> {
         if (_Dead)
             return;
         var direction = Vector3.zero;
+
+        if (JoystickWidget.Instance.HasTouch) {
+            direction = JoystickWidget.Instance.Value;
+        }
+
         if (Input.GetKey(KeyCode.W))
             direction += Vector3.forward;
         if (Input.GetKey(KeyCode.A))
@@ -52,6 +57,5 @@ public class PlayerController : JamBase<PlayerController> {
         else {
             Animator.SetFloat(_Speed, 0f);
         }
-        
     }
 }
