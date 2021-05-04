@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerController : JamBase<PlayerController> {
     public Animator Animator;
@@ -10,6 +11,8 @@ public class PlayerController : JamBase<PlayerController> {
     public Vector3 Position => _Transform.position;
 
     private bool _Dead;
+
+    public event Action onDied = () => { };
     
     protected override void Awake() {
         base.Awake();
@@ -25,6 +28,7 @@ public class PlayerController : JamBase<PlayerController> {
             _Dead = true;
             BulletSpawner.enabled = false;
             GetComponent<Collider>().enabled = false;
+            onDied.Invoke();
         }
     }
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class RoomGenerator : JamBase<RoomGenerator> {
+public class BotSpawner : JamBase<BotSpawner> {
     public Bot BotPrefab;
     public float SpawnRate = 2f;
     public Collider TriggerCollider;
