@@ -940,6 +940,14 @@ PrefabInstance:
       propertyPath: RepairPrice
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7327165383958750270, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
+      propertyPath: HealthBarPrefab
+      value: 
+      objectReference: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+    - target: {fileID: 7327165383958750270, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
+      propertyPath: RepairedAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7327165386026106489, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
       propertyPath: m_Name
       value: Modules

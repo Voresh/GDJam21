@@ -15,10 +15,10 @@ public class PlayerController : JamBase<PlayerController> {
 
     public event Action onDied = () => { };
     
-    protected override void Awake() {
-        base.Awake();
+    private void Start() {
         _Transform = transform;
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
+        Health.RestoreHealth();
     }
 
     private void OnDeadStatusUpdated(bool dead) {

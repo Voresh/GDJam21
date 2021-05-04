@@ -8,7 +8,7 @@ public class Health : MonoBehaviour {
     public HealthBar HealthBarPrefab;
     
     private HealthBar _HealthBar;
-    public bool Dead { get; private set; }
+    public bool Dead { get; private set; } = true;
     
     public int HealthCurrent {
         get => _HealthCurrent;
@@ -34,9 +34,12 @@ public class Health : MonoBehaviour {
     private void Start() {
         if (HealthBarPrefab != null)
             _HealthBar = Instantiate(HealthBarPrefab);
-        HealthCurrent = HealthMax;
     }
 
+    public void RestoreHealth() {
+        HealthCurrent = HealthMax;
+    }
+    
     private void Update() {
         if (_HealthBar == null)
             return;

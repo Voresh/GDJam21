@@ -14,6 +14,7 @@ public class Bot : MonoBehaviour {
     private void Start() {
         Target = PlayerController.Instance.gameObject;
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
+        Health.RestoreHealth();
     }
 
     private void OnDeadStatusUpdated(bool dead) {
