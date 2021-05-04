@@ -7,6 +7,7 @@ public class ModulesController : JamBase<ModulesController> {
     private Module _ClosestModule;
 
     public bool ReadyToInteract => _ClosestModule != null;
+    public bool InteractionAvailable => ReadyToInteract && PointsController.Instance.Points >= _ClosestModule.RepairPrice;
 
     private void Update() {
         var closestModule = _Modules

@@ -12,6 +12,7 @@ namespace Widgets {
 
         private void Update() {
             Button.gameObject.SetActive(ModulesController.Instance.ReadyToInteract);
+            Button.interactable = ModulesController.Instance.InteractionAvailable;
         }
 
         private void OnClick() {
