@@ -3,13 +3,26 @@
 public class PlayerController : JamBase<PlayerController> {
     public Animator Animator;
     public float Speed = 4f;
+    public Health Health;
     private Transform _Transform;
     private static readonly int _Speed = Animator.StringToHash("Speed");
     public Vector3 Position => _Transform.position;
 
+    private bool _Dead;
+    
     protected override void Awake() {
         base.Awake();
         _Transform = transform;
+        Health.onHealthUpdated += OnHealthUpdated;
+    }
+
+    private void OnHealthUpdated(int health) {
+        if (_Dead)
+            return;
+        if (health <= 0) {
+            Debug.Log("died");
+            _Dead = true;
+        }
     }
 
     private void Update() {

@@ -385,6 +385,36 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.3433043, y: 0.13437393, z: 0.3704417}
     m_Extent: {x: 0.13242435, y: 0.20573792, z: 0.19674525}
   m_DirtyAABB: 0
+--- !u!1 &1271991319766171673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3888422760926926627}
+  m_Layer: 6
+  m_Name: ShootPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3888422760926926627
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271991319766171673}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.401, y: 1.289, z: 0.404}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7756575183421020310}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1283786779062424307
 GameObject:
   m_ObjectHideFlags: 0
@@ -1897,6 +1927,7 @@ GameObject:
   - component: {fileID: 257683170821850816}
   - component: {fileID: 5505160391668812854}
   - component: {fileID: 7327735730825696552}
+  - component: {fileID: -2792957558222914717}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -1922,6 +1953,7 @@ Transform:
   - {fileID: 5461435134519505008}
   - {fileID: 3941899541723564723}
   - {fileID: 2094593327850202241}
+  - {fileID: 3888422760926926627}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1987,9 +2019,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HealthMax: 100
-  HealthCurrent: 100
   HeightOffset: 2.5
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+--- !u!114 &-2792957558222914717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984859426521596460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d3b1216ef6342a087944610ae7d6ec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShootRate: 0.1
+  BulletPrefab: {fileID: 6039589743294439811, guid: 5cee982035aa9b148be160c3e6011d9b, type: 3}
+  ShootPosition: {fileID: 3888422760926926627}
+  Shooter: {fileID: 7756575183421020310}
 --- !u!1 &7210703766448799169
 GameObject:
   m_ObjectHideFlags: 0
