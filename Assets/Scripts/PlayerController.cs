@@ -38,7 +38,8 @@ public class PlayerController : JamBase<PlayerController> {
         var direction = Vector3.zero;
 
         if (JoystickWidget.Instance.HasTouch) {
-            direction = JoystickWidget.Instance.Value;
+            var joystickInput = JoystickWidget.Instance.Value;
+            direction = new Vector3(joystickInput.x, 0f, joystickInput.y);
         }
 
         if (Input.GetKey(KeyCode.W))

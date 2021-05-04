@@ -17,11 +17,9 @@ public class JoystickWidget : JamBase<JoystickWidget>, IPointerDownHandler, IPoi
     public Vector3 StartJoystickPosition { get; set; }
 
     private float MaxOffsetRadius => _MaxOffsetRadius * _Canvas.scaleFactor;
-    private Vector3 JoystickWorldCenter
-    {
+    private Vector3 JoystickWorldCenter {
         get => _JoystickContainer.position;
-        set
-        {
+        set {
             if (_MoveContainer)
                 _JoystickContainer.position = value;
         }
@@ -29,12 +27,9 @@ public class JoystickWidget : JamBase<JoystickWidget>, IPointerDownHandler, IPoi
 
     private int _PointerId;
 
-    private int CurrentPointerTouchIndex
-    {
-        get
-        {
-            for (var i = 0; i < Input.touchCount; i++)
-            {
+    private int CurrentPointerTouchIndex {
+        get {
+            for (var i = 0; i < Input.touchCount; i++) {
                 var touch = Input.GetTouch(i);
                 if (touch.fingerId == _PointerId)
                     return i;
@@ -43,31 +38,27 @@ public class JoystickWidget : JamBase<JoystickWidget>, IPointerDownHandler, IPoi
         }
     }
 
-    private void Awake()
-    {
+    protected override void Awake() {
+        base.Awake();
         StartJoystickPosition = JoystickWorldCenter;
         if (_DisableJoystickWhenInactive)
             _JoystickContainer.gameObject.SetActive(false);
     }
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
         ResetHandlePosition();
         HasTouch = false;
         _PointerId = 0;
     }
 
-    public void ResetJoystickPosition()
-    {
+    public void ResetJoystickPosition() {
         _JoystickContainer.position = StartJoystickPosition;
         _HandleRoot.position = StartJoystickPosition;
         Value = Vector2.zero;
     }
 
-    void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
-    {
-        if (!HasTouch)
-        {
+    void IPointerDownHandler.OnPointerDown(PointerEventData eventData) {
+        if (!HasTouch) {
             if (_DisableJoystickWhenInactive)
                 _JoystickContainer.gameObject.SetActive(true);
             HasTouch = true;
@@ -77,10 +68,8 @@ public class JoystickWidget : JamBase<JoystickWidget>, IPointerDownHandler, IPoi
         }
     }
 
-    void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
-    {
-        if (HasTouch && _PointerId == eventData.pointerId)
-        {
+    void IPointerUpHandler.OnPointerUp(PointerEventData eventData) {
+        if (HasTouch && _PointerId == eventData.pointerId) {
             HasTouch = false;
             JoystickWorldCenter = StartJoystickPosition;
             ResetHandlePosition();
@@ -92,14 +81,12 @@ public class JoystickWidget : JamBase<JoystickWidget>, IPointerDownHandler, IPoi
     // TODO: Check drag threshold on devices with low dpi, might need adjustments in InputModule.
     // If drag threshold conflicts with other interfaces, might need custom realization via Update instead of OnDrag
 
-    void IDragHandler.OnDrag(PointerEventData eventData)
-    {
+    void IDragHandler.OnDrag(PointerEventData eventData) {
         if (HasTouch && _PointerId == eventData.pointerId)
             SetHandlePosition(eventData.position);
     }
 
-    private void Update()
-    {
+    private void Update() {
 #if !UNITY_EDITOR
             if (HasTouch)
                 SetHandlePosition(Input.GetTouch(CurrentPointerTouchIndex).position);
@@ -109,15 +96,13 @@ public class JoystickWidget : JamBase<JoystickWidget>, IPointerDownHandler, IPoi
 #endif
     }
 
-    private void ResetHandlePosition()
-    {
+    private void ResetHandlePosition() {
         SetHandlePosition(JoystickWorldCenter);
         Value = Vector2.zero;
     }
 
-    private void SetHandlePosition(Vector2 position)
-    {
-        var offset = ((Vector3)position - JoystickWorldCenter) / MaxOffsetRadius;
+    private void SetHandlePosition(Vector2 position) {
+        var offset = ((Vector3) position - JoystickWorldCenter) / MaxOffsetRadius;
         if (offset.magnitude > 1)
             offset = offset.normalized;
         Value = offset;
