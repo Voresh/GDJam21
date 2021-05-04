@@ -16,6 +16,7 @@ public class AnnouncementController : JamBase<AnnouncementController> {
 
     private void Start() {
         Text.text = string.Empty;
+        Group.alpha = 0f;
     }
 
     public void Schedule(string text) {
@@ -34,6 +35,7 @@ public class AnnouncementController : JamBase<AnnouncementController> {
             if (_Scheduled.Count > 0) {
                 _CurrentText = _Scheduled.Dequeue();
                 _InProgress = true;
+                _LastAnnouncementTime = Time.time;
             }
             else {
                 _InProgress = false;
