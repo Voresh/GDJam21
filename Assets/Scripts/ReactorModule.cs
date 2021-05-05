@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ReactorModule : Module {
     protected override void AddStaticEffects() {
@@ -9,6 +12,14 @@ public class ReactorModule : Module {
         if (Health.Dead) {
             AnnouncementController.Instance.Schedule("Game over!");
             Time.timeScale = 0f;
+            StartCoroutine(Delay(() => {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }, 2f));
         }    
+    }
+
+    private IEnumerator Delay(Action action, float delay) {
+        yield return new WaitForSecondsRealtime(delay);
+        action.Invoke();
     }
 }

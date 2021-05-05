@@ -15,10 +15,10 @@ public class MedicalModule : Module {
     private void OnDeadStatusUpdated(bool dead) {
         if (!dead)
             return;
-        //if (!ModulesController.Instance._Modules.First(_ => _.GetComponent<ReactorModule>() != null).Repaired) {
-        //    Debug.Log("medical module not repaired - not restoring player");
-        //    return;
-        //} //todo: uncomment later
+        if (!ModulesController.Instance._Modules.First(_ => _.GetComponent<ReactorModule>() != null).Repaired) {
+            Debug.Log("medical module not repaired - not restoring player");
+            return;
+        }
         PlayerController.Instance.NavMeshAgent.enabled = false;
         PlayerController.Instance.transform.position = SpawnPoint.position;
         PlayerController.Instance.NavMeshAgent.enabled = true;

@@ -7,8 +7,8 @@ public class WarehouseModule : Module {
     private bool Work;
 
     public GameObject Aidkit;
-
-    public void Start() {
+    
+    protected override void AddStaticEffects() {
         Work = this.RepairedAtStart;
         BotSpawner.Instance.onWaveStatusUpdated += OnWaveStatusUpdated;
     }
