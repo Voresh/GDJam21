@@ -30,7 +30,6 @@ public class LaboratoryBranchWidget : MonoBehaviour {
             //buffWidget.UpgradedRoot.SetActive(laboratoryModule.UpgradeComplete(branchId, index));
             buffWidget.Button.onClick.AddListener(() => {
                 laboratoryModule.UpgradeBranchProgress(branchId);
-                Setup(branchId);
             });
             BuffWidgets.Add(buffWidget);
         }

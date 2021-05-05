@@ -5,12 +5,24 @@ using UnityEngine;
 
 public class LaboratoryModule : Module {
     public List<LaboratoryBranch> Branches;
+    public int UnitDeathPoints = 5;
 
     public Dictionary<string, int> BranchProgress = new Dictionary<string, int>();
 
-    public int Points { get; private set; }
+    public event Action<int> onPointsUpdated = _ => { };
+    public event Action onUpgradesUpdated = () => { };
+    
+    private int _Points;
+    public int Points {
+        get => _Points;
+        private set {
+            _Points = value;
+            onPointsUpdated.Invoke(_Points);
+        }
+    }
 
     protected override void AddStaticEffects() {
+        //PlayerPrefs.DeleteAll();
         LoadProgress();
         foreach (var progressKVP in BranchProgress) {
             var branchName = progressKVP.Key;
@@ -45,6 +57,8 @@ public class LaboratoryModule : Module {
         var nextBuff = branch.Buffs[nextProgress];
         Points -= nextBuff.Price;
         BranchProgress[branchName] = nextProgress;
+        UpdateBuff(nextBuff);
+        onUpgradesUpdated.Invoke();
         SaveProgress();
     }
 
@@ -113,6 +127,6 @@ public class LaboratoryModule : Module {
     private void OnBotDeadStatusUpdated(bool dead) {
         if (!dead)
             return;
-        Points += 10;
+        Points += UnitDeathPoints;
     }
 }

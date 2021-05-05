@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LaboratoryWidget : MonoBehaviour {
     public Button CloseButton;
+    public Text Points;
     public Transform BranchesRoot;
     public LaboratoryBranchWidget BranchPrefab;
 
@@ -21,11 +22,25 @@ public class LaboratoryWidget : MonoBehaviour {
 
     private void OnEnable() {
         Time.timeScale = 0;
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules.
+            First(_ => _ is LaboratoryModule);
+        laboratoryModule.onPointsUpdated += OnPointsUpdated;
+        laboratoryModule.onUpgradesUpdated += OnUpgradesUpdated;
+        Rebuild(laboratoryModule);
+    }
+
+    private void OnUpgradesUpdated() {
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules
+            .First(_ => _ is LaboratoryModule);
+        Rebuild(laboratoryModule);
+    }
+
+    private void Rebuild(LaboratoryModule laboratoryModule) {
         foreach (var branch in BranchWidgets) {
             Destroy(branch.gameObject);
         }
         BranchWidgets.Clear();
-        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules.First(_ => _ is LaboratoryModule);
+        Points.text = $"Points: {laboratoryModule.Points.ToString()}";
         foreach (var branch in laboratoryModule.Branches) {
             var branchWidget = Instantiate(BranchPrefab, BranchesRoot);
             branchWidget.Setup(branch.Name);
@@ -33,7 +48,14 @@ public class LaboratoryWidget : MonoBehaviour {
         }
     }
 
+    private void OnPointsUpdated(int points) {
+        Points.text = $"Points: {points}";
+    }
+
     private void OnDisable() {
         Time.timeScale = 1;
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules
+            .First(_ => _ is LaboratoryModule);
+        laboratoryModule.onPointsUpdated -= OnPointsUpdated;
     }
 }

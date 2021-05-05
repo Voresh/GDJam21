@@ -569,6 +569,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CloseButton: {fileID: 3398393862206454628}
+  Points: {fileID: 8379321737074874754}
   BranchesRoot: {fileID: 3681156649538008945}
   BranchPrefab: {fileID: 438538123883324560, guid: 60a29322e8770ab439e9b4419428840a, type: 3}
 --- !u!1 &6526612023747583033

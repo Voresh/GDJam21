@@ -7,7 +7,7 @@ public class Health : MonoBehaviour {
     private int _HealthCurrent;
     public float HeightOffset = 2.5f;
     public HealthBar HealthBarPrefab;
-    public float GlobalHealthBuff { get; set; }
+    public float GlobalHealthBuff;
     private HealthBar _HealthBar;
     public bool Dead { get; private set; } = true;
     

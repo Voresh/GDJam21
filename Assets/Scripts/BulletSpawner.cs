@@ -9,7 +9,7 @@ public class BulletSpawner : MonoBehaviour {
     public Transform Shooter;
 
     private float _LastShotTime;
-    public float GlobalDamageBuff { get; set; }
+    public float GlobalDamageBuff;
 
     private void Update() {
         if (Time.time - _LastShotTime < ShootRate)
