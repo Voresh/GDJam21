@@ -13,11 +13,13 @@ public class Module : MonoBehaviour {
     private Health _Health;
     private PriceBar _PriceBar;
     private HealthBar _HealthBar;
+    private bool _LastDeadStatus; //hack
     
     public bool Repaired => !_Health.Dead;
 
     private void Start() {
         _Health = GetComponent<Health>();
+        _LastDeadStatus = _Health.Dead;
         _Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         if (PriceBarPrefab != null) {
             _PriceBar = Instantiate(PriceBarPrefab);
@@ -36,14 +38,19 @@ public class Module : MonoBehaviour {
         DestroyedView.SetActive(dead);
         _PriceBar.gameObject.SetActive(dead);
         _HealthBar.gameObject.SetActive(!dead);
+        if (_LastDeadStatus != dead)
+            UpdateEffects(!dead);
+        _LastDeadStatus = dead;
     }
+
+    protected virtual void UpdateEffects(bool active) { }
 
     private void Update() {
         if (_PriceBar != null)
             _PriceBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
         if (_HealthBar != null) {
             _HealthBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
-            _HealthBar.Fill = (float) _Health.HealthCurrent / _Health.HealthMax;    
+            _HealthBar.Fill = (float) _Health.HealthCurrent / _Health.HealthMax;
         }
     }
 
