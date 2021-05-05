@@ -10,17 +10,17 @@ public class Module : MonoBehaviour {
     public int RepairPrice;
     public float PriceHeightOffset = 2f;
 
-    private Health _Health;
+    protected Health Health;
     private PriceBar _PriceBar;
     private HealthBar _HealthBar;
     private bool _LastDeadStatus; //hack
     private bool _Initialized;
     
-    public bool Repaired => !_Health.Dead;
+    public bool Repaired => !Health.Dead;
 
     private void Start() {
-        _Health = GetComponent<Health>();
-        _Health.onDeadStatusUpdated += OnDeadStatusUpdated;
+        Health = GetComponent<Health>();
+        Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         if (PriceBarPrefab != null) {
             _PriceBar = Instantiate(PriceBarPrefab);
             _PriceBar.Price = RepairPrice;
@@ -29,8 +29,8 @@ public class Module : MonoBehaviour {
             _HealthBar = Instantiate(HealthBarPrefab);
         }
         if (RepairedAtStart)
-            _Health.RestoreHealth();
-        OnDeadStatusUpdated(_Health.Dead);
+            Health.RestoreHealth();
+        OnDeadStatusUpdated(Health.Dead);
         AddStaticEffects();
     }
 
@@ -55,11 +55,11 @@ public class Module : MonoBehaviour {
             _PriceBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
         if (_HealthBar != null) {
             _HealthBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
-            _HealthBar.Fill = (float) _Health.HealthCurrent / _Health.HealthMax;
+            _HealthBar.Fill = (float) Health.HealthCurrent / Health.HealthMax;
         }
     }
 
     public void Repair() {
-        _Health.RestoreHealth();
+        Health.RestoreHealth();
     }
 }
