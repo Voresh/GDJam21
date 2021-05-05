@@ -15,11 +15,14 @@ public class Bot : MonoBehaviour {
     public float AttackRadius = 4f;
     private static readonly int _Speed = Animator.StringToHash("Speed");
     public List<Module> TargetModules;
+    public GameObject TargetPlayer;
+    public GameObject MoveToTarget;
     public Health Health;
     public LayerMask LevelLayer;
     
     private void Start() {
         TargetModules = ModulesController.Instance.Modules.ToList();
+        TargetPlayer = PlayerController.Instance.gameObject;
         NavMeshAgent = GetComponent<NavMeshAgent>();
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         Health.RestoreHealth();
@@ -74,15 +77,15 @@ public class Bot : MonoBehaviour {
             .Where(_ => _.GetComponent<Module>().Repaired)
             .OrderBy(_ => Vector3.Distance(_.transform.position, transform.position))
             .FirstOrDefault();
-        if (repairedModule != null) {
-            NavMeshAgent.speed = Speed;
-            NavMeshAgent.SetDestination(repairedModule.transform.position);
-            Animator.SetFloat(_Speed, Speed);
-            _Debug = "movint to module";
-            return;
-        }
-        _Debug = "idle";
-        Animator.SetFloat(_Speed, 0f);
+        if (repairedModule != null)
+            MoveToTarget = repairedModule.gameObject;
+        else
+            MoveToTarget = TargetPlayer;
+
+        NavMeshAgent.speed = Speed;
+        NavMeshAgent.SetDestination(MoveToTarget.transform.position);
+        Animator.SetFloat(_Speed, Speed);
+        _Debug = "movint to module";
     }
 
     private string _Debug;
