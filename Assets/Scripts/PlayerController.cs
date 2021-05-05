@@ -15,7 +15,9 @@ public class PlayerController : JamBase<PlayerController> {
     public LayerMask EnemyLayer;
 
     public event Action onDied = () => { };
-    
+
+    private Collider NearbyTarget;
+
     private void Start() {
         _Transform = transform;
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
@@ -35,26 +37,28 @@ public class PlayerController : JamBase<PlayerController> {
     }
 
     private void Update() {
+        if (Health.Dead)
+            return;
+        var direction = Vector3.zero;
+
         Collider[] TargetColliders = Physics.OverlapSphere(transform.position, AttackRadius, EnemyLayer);
         if (TargetColliders.Length != 0)
         {
             var targets = TargetColliders
                 .Where(t => t.name != name)
                 .OrderBy(t => Vector3.Distance(t.transform.position, transform.position));
-            var NearbyTarget = targets.FirstOrDefault();
+            NearbyTarget = targets.FirstOrDefault();
 
-            if (NearbyTarget == null) {
+            if (NearbyTarget == null)
+            {
                 BulletSpawner.enabled = false;
             }
-            else {
+            else
+            {
                 transform.LookAt(NearbyTarget.transform);
                 BulletSpawner.enabled = true;
             }
         }
-
-        if (Health.Dead)
-            return;
-        var direction = Vector3.zero;
 
         if (JoystickWidget.Instance.HasTouch) {
             var joystickInput = JoystickWidget.Instance.Value;
@@ -71,7 +75,8 @@ public class PlayerController : JamBase<PlayerController> {
             direction += Vector3.right;
         if (direction != Vector3.zero) {
             _Transform.position += direction.normalized * Speed * Time.deltaTime;
-            _Transform.forward = direction;
+            if (NearbyTarget == null)
+                _Transform.forward = direction;
             Animator.SetFloat(_Speed, Speed);
         }
         else {
