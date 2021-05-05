@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using System.Linq;
 
 public class PlayerController : JamBase<PlayerController> {
     public Animator Animator;
@@ -37,7 +38,18 @@ public class PlayerController : JamBase<PlayerController> {
         Collider[] TargetColliders = Physics.OverlapSphere(transform.position, AttackRadius, EnemyLayer);
         if (TargetColliders.Length != 0)
         {
-            Debug.LogError(TargetColliders);
+            var targets = TargetColliders
+                .Where(t => t.name != name)
+                .OrderBy(t => Vector3.Distance(t.transform.position, transform.position));
+            var NearbyTarget = targets.FirstOrDefault();
+
+            if (NearbyTarget == null) {
+                BulletSpawner.enabled = false;
+            }
+            else {
+                transform.LookAt(NearbyTarget.transform);
+                BulletSpawner.enabled = true;
+            }
         }
 
         if (Health.Dead)
