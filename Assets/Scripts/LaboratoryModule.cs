@@ -71,6 +71,17 @@ public class LaboratoryModule : Module {
         return true;
     }
 
+    public bool EnoughPoints(string branchName, int index) {
+        var branch = Branches.First(_ => _.Name == branchName);
+        var nextBuff = branch.Buffs[index];
+        return Points >= nextBuff.Price;
+    }
+
+    public bool UpgradeComplete(string branchName, int index) {
+        var currentProgress = BranchProgress[branchName];
+        return currentProgress >= index;
+    }
+
     private void OnApplicationQuit() {
         SaveProgress();
     }

@@ -37,7 +37,7 @@ public class MedicalModule : Module {
 
     private IEnumerator HealPlayerCoroutine() {
         while (true) {
-            yield return new WaitForSecondsRealtime(HealRate);
+            yield return new WaitForSeconds(HealRate);
             PlayerController.Instance.Health.HealthCurrent += HealAmount;
         }
     }

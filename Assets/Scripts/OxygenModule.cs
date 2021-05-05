@@ -20,7 +20,7 @@ public class OxygenModule : Module {
 
     private IEnumerator DamagePlayerCoroutine() {
         while (true) {
-            yield return new WaitForSecondsRealtime(DamageRate);
+            yield return new WaitForSeconds(DamageRate);
             PlayerController.Instance.Health.HealthCurrent -= DamageAmount;
         }
     }

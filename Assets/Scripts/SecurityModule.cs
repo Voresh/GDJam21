@@ -21,7 +21,7 @@ public class SecurityModule : Module {
 
     private IEnumerator SpawnSecurityBotCoroutine() {
         while (true) {
-            yield return new WaitForSecondsRealtime(SpawnRate);
+            yield return new WaitForSeconds(SpawnRate);
             var securityBot = Instantiate(SecurityBotPrefab, SpawnPoint.position, Quaternion.identity);
             securityBot.Route = Route;
         }

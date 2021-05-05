@@ -20,6 +20,7 @@ public class LaboratoryWidget : MonoBehaviour {
     }
 
     private void OnEnable() {
+        Time.timeScale = 0;
         foreach (var branch in BranchWidgets) {
             Destroy(branch.gameObject);
         }
@@ -30,5 +31,9 @@ public class LaboratoryWidget : MonoBehaviour {
             branchWidget.Setup(branch.Name);
             BranchWidgets.Add(branchWidget);
         }
+    }
+
+    private void OnDisable() {
+        Time.timeScale = 1;
     }
 }
