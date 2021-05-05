@@ -16,6 +16,7 @@ public class Bot : MonoBehaviour {
     public GameObject TargetPlayer;
     public List<Module> TargetModules;
     public Health Health;
+    public GameObject MoveToTarget;
 
     private void Start() {
         TargetPlayer = PlayerController.Instance.gameObject;
@@ -39,10 +40,12 @@ public class Bot : MonoBehaviour {
         }
 
         var targetColliders = Physics.OverlapSphere(transform.position, AttackRadius, EnemyLayer);
+
         var target = targetColliders
-            .Where(_ => _.gameObject != gameObject)
+            .Where(_ =>  _.GetComponent<Bot>() == null)
             .OrderBy(_ => Vector3.Distance(_.transform.position, transform.position))
             .FirstOrDefault();
+        Debug.LogError(target);
         if (target != null) {
             transform.LookAt(target.transform);
             BulletSpawner.enabled = true;
@@ -51,18 +54,25 @@ public class Bot : MonoBehaviour {
             return;
         }
 
-        Debug.LogError(TargetModules.ToList());
+        //foreach(var i in TargetModules)
+        //    Debug.LogError(i);
         var RepairedModules = TargetModules
             .Where(_ => _.GetComponent<Module>().Repaired)
             .ToList();
-        Debug.LogError(RepairedModules);
-        var NearbyTargetModules = TargetModules
-            .OrderBy(_ => Vector3.Distance(_.transform.position, transform.position))
-            .FirstOrDefault();
+        //foreach (var i in RepairedModules)
+        //    Debug.LogError(i);
+
+        if (RepairedModules != null) {
+            MoveToTarget = RepairedModules
+           .OrderBy(_ => Vector3.Distance(_.transform.position, transform.position))
+           .FirstOrDefault().gameObject;
+        }
+        else
+            MoveToTarget = TargetPlayer;
 
 
-        var direction = TargetPlayer.transform.position - transform.position;
-        if (TargetPlayer.GetComponent<Health>().HealthCurrent > 0 && direction.magnitude < DetectionRadius && direction.magnitude > AttackRadius) {
+        var direction = MoveToTarget.transform.position - transform.position;
+        if (MoveToTarget.GetComponent<Health>().HealthCurrent > 0 && direction.magnitude < DetectionRadius && direction.magnitude > AttackRadius) {
             NavMeshAgent.speed = Speed;
             NavMeshAgent.Move(direction.normalized * Speed * Time.deltaTime);
             //transform.position += ;
@@ -72,7 +82,7 @@ public class Bot : MonoBehaviour {
         else {
             Animator.SetFloat(_Speed, 0f);
         }
-        if (TargetPlayer.GetComponent<Health>().HealthCurrent > 0 && direction.magnitude < AttackRadius) {
+        if (MoveToTarget.GetComponent<Health>().HealthCurrent > 0 && direction.magnitude < AttackRadius) {
             BulletSpawner.enabled = true;
             transform.forward = direction;
         }
