@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Animator: {fileID: 8190671356311950343}
+  NavMeshAgent: {fileID: 0}
   Speed: 4
   Health: {fileID: 8427765721377178369}
   BulletSpawner: {fileID: 5222279398849932618}
+  AttackRadius: 5
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64
-  AttackRadius: 500
+  SpeedBuff: 0
 --- !u!1001 &1244164029340653097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31,6 +33,10 @@ PrefabInstance:
       propertyPath: Shooter
       value: 
       objectReference: {fileID: 8854301851793788607}
+    - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: ShootRate
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: ShootPosition
       value: 
@@ -262,6 +268,10 @@ PrefabInstance:
     - target: {fileID: 7277735974797155093, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327735730825696552, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: StartMaxHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 7335753689549055568, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Layer

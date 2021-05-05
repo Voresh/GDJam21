@@ -16,15 +16,14 @@ MonoBehaviour:
   Animator: {fileID: 4445352181464920595}
   EnemyLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
   NavMeshAgent: {fileID: 0}
   Speed: 2.5
   DetectionRadius: 7
-  AttackRadius: 4
+  AttackRadius: 6
   TargetPlayer: {fileID: 0}
   TargetModules: []
   Health: {fileID: 4102634361452438805}
-  MoveToTarget: {fileID: 0}
 --- !u!1001 &6727855462364131389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33,9 +32,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: ShootRate
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 1148742588680458375, guid: be0c7f7b66199ed488973895983082c4, type: 3}
     - target: {fileID: 6984859426521596460, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Name
       value: Bot
