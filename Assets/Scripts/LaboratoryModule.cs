@@ -38,7 +38,7 @@ public class LaboratoryModule : Module {
         var branch = Branches.First(_ => _.Name == branchName);
         var currentProgress = BranchProgress[branchName];
         var nextProgress = currentProgress + 1;
-        if (UpgradeAvailable(branchName, nextProgress)) {
+        if (!UpgradeAvailable(branchName, nextProgress)) {
             Debug.LogError("upgrade failed!");
             return;
         }

@@ -24,7 +24,10 @@ public class LaboratoryBranchWidget : MonoBehaviour {
             var buffWidget = Instantiate(BuffWidgetPrefab, BuffsRoot);
             buffWidget.Text.text = $"{buff.Type} {(buff.Amount > 0 ? "+" : string.Empty)}{buff.Amount * 100}%\nPrice: {buff.Price}";
             buffWidget.Button.interactable = laboratoryModule.UpgradeAvailable(branchId, index);
-            buffWidget.Button.onClick.AddListener(() => { laboratoryModule.UpgradeBranchProgress(branchId); });
+            buffWidget.Button.onClick.AddListener(() => {
+                laboratoryModule.UpgradeBranchProgress(branchId);
+                Setup(branchId);
+            });
             BuffWidgets.Add(buffWidget);
         }
     }
