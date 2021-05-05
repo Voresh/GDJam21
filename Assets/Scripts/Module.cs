@@ -23,7 +23,7 @@ public class Module : MonoBehaviour {
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         if (PriceBarPrefab != null) {
             _PriceBar = Instantiate(PriceBarPrefab);
-            _PriceBar.Price = RepairPrice;
+            _PriceBar.Price = ModulesController.Instance.GetRepairPrice(this);
         }
         if (HealthBarPrefab != null) {
             _HealthBar = Instantiate(HealthBarPrefab);
@@ -51,8 +51,10 @@ public class Module : MonoBehaviour {
     protected virtual void UpdateEffects(bool active) { }
 
     private void Update() {
-        if (_PriceBar != null)
+        if (_PriceBar != null) {
             _PriceBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
+            _PriceBar.Text.text = ModulesController.Instance.GetRepairPrice(this).ToString();
+        }
         if (_HealthBar != null) {
             _HealthBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
             _HealthBar.Fill = (float) Health.HealthCurrent / Health.HealthMax;
