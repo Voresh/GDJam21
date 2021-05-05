@@ -52,6 +52,7 @@ MonoBehaviour:
   DropPoint: {fileID: 6745000498515265808}
   DropItems:
   - {fileID: 4487989998304773478, guid: 8db0da073c2a6164d852f1e693e59cd4, type: 3}
+  Work: 0
 --- !u!1 &6745000498515265808
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253928, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.56
+      value: 4.67
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253928, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_LocalPosition.y
