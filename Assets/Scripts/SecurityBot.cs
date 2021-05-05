@@ -7,6 +7,7 @@ public class SecurityBot : MonoBehaviour {
     public LayerMask EnemyLayer;
     public LayerMask LevelLayer;
     public float AttackRadius = 5f;
+    public Health Health;
     public List<Transform> Route { get; set; }
     public float StoppingDistance;
     public int TargetPointIndex;
@@ -20,13 +21,27 @@ public class SecurityBot : MonoBehaviour {
         NavMeshAgent = GetComponent<NavMeshAgent>();
         Animator = GetComponent<Animator>();
         BulletSpawner = GetComponent<BulletSpawner>();
+        Health = GetComponent<Health>();
         NavMeshAgent.autoBraking = false;
         NavMeshAgent.SetDestination(Route[TargetPointIndex].position);
         Animator.SetFloat("Speed", 1f);
         GetComponent<BulletSpawner>().enabled = false;
+        Health.onDeadStatusUpdated += OnDeadStatusUpdated;
+    }
+    
+    private void OnDeadStatusUpdated(bool dead) {
+        if (dead) {
+            Animator.SetBool("Died", true);
+            GetComponent<Collider>().enabled = false;
+            NavMeshAgent.enabled = false;
+        }
     }
 
     private void Update() {
+        if (Health.Dead) {
+            BulletSpawner.enabled = false;
+            return;
+        }
         var targetColliders = Physics.OverlapSphere(transform.position, AttackRadius, EnemyLayer);
         var target = targetColliders
             .Where(_ => _.gameObject != gameObject 
@@ -50,7 +65,6 @@ public class SecurityBot : MonoBehaviour {
             Animator.SetFloat("Speed", 1f);
             _WasShooting = false;
         }
-
         if ((Route[TargetPointIndex].position - transform.position).sqrMagnitude > StoppingDistance * StoppingDistance)
             return;
         TargetPointIndex++;

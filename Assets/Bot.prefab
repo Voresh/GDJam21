@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Bits: 64
   NavMeshAgent: {fileID: 0}
   Speed: 2.5
-  DetectionRadius: 7
+  DetectionRadius: 10
   AttackRadius: 6
   TargetPlayer: {fileID: 0}
   TargetModules: []

@@ -1788,7 +1788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1993638825648169899, guid: a786234c997a1b24cbea327fdb78f34f, type: 3}
       propertyPath: StartSpawnRate
-      value: 20
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a786234c997a1b24cbea327fdb78f34f, type: 3}
@@ -2444,6 +2444,10 @@ PrefabInstance:
     - target: {fileID: 7327165386026106491, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8893774311380940612, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
+      propertyPath: RepairedAtStart
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
