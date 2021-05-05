@@ -19,7 +19,7 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 3376980941601391386}
   Name: Reactor
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
 --- !u!114 &3498461108338558623
@@ -41,9 +41,10 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 3119284288153001884}
   Name: Laboratory
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
+  DebugMode: 0
   Branches:
   - Buffs:
     - Type: 0
@@ -137,7 +138,7 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 895162653784143968}
   Name: Shields
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
   SpawnRateBuff: 5
@@ -160,7 +161,7 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 1715745961300829615}
   Name: Warehouse
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
   DropPoint: {fileID: 9123259226248813159}
@@ -186,7 +187,7 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 1190590568802647540}
   Name: Weapon
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
   DropPoint: {fileID: 2004766315035925221}
@@ -275,11 +276,11 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 4761012259552182807}
   Name: Medical
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
   HealRate: 1
-  HealAmount: 7
+  HealAmount: 5
   SpawnPoint: {fileID: 1833459066267640782}
 --- !u!1 &7327165386026106489
 GameObject:
@@ -361,11 +362,11 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 6585178702038995489}
   Name: Oxygen
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
   DamageRate: 1
-  DamageAmount: 1
+  DamageAmount: 7
 --- !u!1001 &83615263497786806
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -767,6 +768,10 @@ PrefabInstance:
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: Name
       value: Security
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
+      propertyPath: RepairPrice
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: RepairedAtStart

@@ -128,7 +128,7 @@ MonoBehaviour:
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 1273635185027409986}
   Name: 
-  RepairPrice: 10
+  RepairPrice: 15
   PriceHeightOffset: 3
   Health: {fileID: 0}
 --- !u!65 &3895909479530253935

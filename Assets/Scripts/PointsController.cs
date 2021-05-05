@@ -1,6 +1,7 @@
 ﻿using System;
 
 public class PointsController : JamBase<PointsController> {
+    public int EnemyDeadReward = 5;
     private int _Points;
     public int Points {
         get => _Points;
@@ -25,6 +26,6 @@ public class PointsController : JamBase<PointsController> {
     private void OnBotDeadStatusUpdated(bool dead) {
         if (!dead)
             return;
-        Points += 10;
+        Points += EnemyDeadReward;
     }
 }

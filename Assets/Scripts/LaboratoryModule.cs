@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 
 public class LaboratoryModule : Module {
+    public bool DebugMode;
     public List<LaboratoryBranch> Branches;
     public int UnitDeathPoints = 5;
 
@@ -22,7 +23,8 @@ public class LaboratoryModule : Module {
     }
 
     protected override void AddStaticEffects() {
-        //PlayerPrefs.DeleteAll();
+        if (DebugMode)
+            PlayerPrefs.DeleteAll();
         LoadProgress();
         foreach (var progressKVP in BranchProgress) {
             var branchName = progressKVP.Key;
