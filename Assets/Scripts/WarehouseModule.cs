@@ -12,7 +12,7 @@ public class WarehouseModule : Module {
     private void OnWaveStatusUpdated(bool active)
     {
         if (!active)
-            Instantiate(DropItems[Random.Range(0, DropItems.Length - 1);
+            Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)]);
             AnnouncementController.Instance.Schedule($"Wave complete");
     }
 
