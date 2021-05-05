@@ -27,7 +27,7 @@ public class LaboratoryWidget : MonoBehaviour {
         var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules.First(_ => _ is LaboratoryModule);
         foreach (var branch in laboratoryModule.Branches) {
             var branchWidget = Instantiate(BranchPrefab, BranchesRoot);
-            // branchWidget //todo: setup
+            branchWidget.Setup(branch.Name);
             BranchWidgets.Add(branchWidget);
         }
     }
