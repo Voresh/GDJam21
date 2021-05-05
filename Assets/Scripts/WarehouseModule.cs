@@ -11,15 +11,14 @@ public class WarehouseModule : Module {
         BotSpawner.Instance.onWaveStatusUpdated += OnWaveStatusUpdated;
     }
 
-    private void OnWaveStatusUpdated(bool active)
-    {
-        if (!active && Work)
-            Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)], DropPoint);
+    private void OnWaveStatusUpdated(bool active) {
+        if (!active && Work) {
+            var Drop = Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)]);
+            Drop.transform.position = DropPoint.position;
+        }
     }
 
-    protected override void UpdateEffects(bool active)
-    {
+    protected override void UpdateEffects(bool active) {
         Work = active;
     }
 }
-
