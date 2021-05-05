@@ -30,6 +30,7 @@ public class Bot : MonoBehaviour {
         if (dead) {
             Animator.SetBool("Died", true);
             GetComponent<Collider>().enabled = false;
+            NavMeshAgent.enabled = false;
         }
     }
 

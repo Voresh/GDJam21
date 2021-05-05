@@ -16,7 +16,7 @@ MonoBehaviour:
   Animator: {fileID: 4445352181464920595}
   EnemyLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   NavMeshAgent: {fileID: 0}
   Speed: 2.5
   DetectionRadius: 7
@@ -24,6 +24,7 @@ MonoBehaviour:
   TargetPlayer: {fileID: 0}
   TargetModules: []
   Health: {fileID: 4102634361452438805}
+  MoveToTarget: {fileID: 0}
 --- !u!1001 &6727855462364131389
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -55,7 +55,7 @@ public class PlayerController : JamBase<PlayerController> {
         if (TargetColliders.Length != 0)
         {
             var targets = TargetColliders
-                .Where(t => t.name != name)
+                .Where(t => t.gameObject != gameObject && t.GetComponent<SecurityBot>() == null)
                 .OrderBy(t => Vector3.Distance(t.transform.position, transform.position));
             NearbyTarget = targets.FirstOrDefault();
 
