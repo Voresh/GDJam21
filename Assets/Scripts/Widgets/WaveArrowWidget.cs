@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 namespace Widgets {
     public class WaveArrowWidget : MonoBehaviour {
         public Transform Arrow;
         
         private void Update() {
-            if (!BotSpawner.Instance.FirstWaveSpawned) {
+            if (!BotSpawner.Instance.FirstWaveSpawned 
+                || BotSpawner.Instance.CurrentWaveBots.Count == 0 
+                || BotSpawner.Instance.CurrentWaveBots.All(_ => _.Health.Dead)) {
                 Arrow.gameObject.SetActive(false);
                 return;
             }

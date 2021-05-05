@@ -10,6 +10,7 @@ public class BotSpawner : JamBase<BotSpawner> {
     public int BotsCount = 3; //todo: moar complicated logic
 
     public bool FirstWaveSpawned => CurrentWave != -1;
+    public List<Bot> CurrentWaveBots = new List<Bot>();
     public float NextWaveTime => SpawnRate - (Time.time - _LastWaveTime);
     public event Action<int> onWaveSpawnStarted = _ => { };
     public event Action<Bot> onBotSpawned = _ => { };
@@ -26,12 +27,14 @@ public class BotSpawner : JamBase<BotSpawner> {
             return;
         CurrentWave++;
         var bounds = SpawnPoints[UnityEngine.Random.Range(0, SpawnPoints.Count)].bounds;
+        CurrentWaveBots.Clear();
         for (var i = 0; i < BotsCount; i++) {
             var position = new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x), UnityEngine.Random.Range(bounds.min.y, bounds.max.y), UnityEngine.Random.Range(bounds.min.z, bounds.max.z));
             var botInstance = Instantiate(BotPrefab, position, Quaternion.identity);
             var botHealth = botInstance.GetComponent<Health>();
             botHealth.HealthMax = 10;
             botHealth.HealthCurrent = 10;
+            CurrentWaveBots.Add(botInstance);
             onBotSpawned.Invoke(botInstance);
         }
         _LastWaveTime = Time.time;
