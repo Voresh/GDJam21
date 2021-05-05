@@ -14,7 +14,8 @@ public class BotSpawner : JamBase<BotSpawner> {
 
     public bool FirstWaveSpawned => CurrentWave != -1;
     public List<Bot> CurrentWaveBots = new List<Bot>();
-    public float SpawnRate => StartSpawnRate /*+ Math.Max(0, CurrentWave * 5)*/;
+    public float SpawnRateBuff;
+    public float SpawnRate => StartSpawnRate + SpawnRateBuff /*+ Math.Max(0, CurrentWave * 5)*/;
     public float NextWaveTime => SpawnRate - (Time.time - _LastWaveCompleteTime);
     public event Action<int> onWaveSpawnStarted = _ => { };
     public event Action<Bot> onBotSpawned = _ => { };
