@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class AnnouncementController : JamBase<AnnouncementController> {
     public Text Text;
     public CanvasGroup Group;
-    public float AnnouncementDuration = 2f;
+    public float AnnouncementDuration = 1.5f;
     public AnimationCurve AlphaCurve;
     
     private Queue<string> _Scheduled = new Queue<string>();

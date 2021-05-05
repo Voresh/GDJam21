@@ -6,6 +6,13 @@ public class GameController : JamBase<GameController> {
         BotSpawner.Instance.onWaveStatusUpdated += OnWaveStatusUpdated;
         PlayerController.Instance.Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         AnnouncementController.Instance.Schedule($"Game Started");
+        foreach (var module in ModulesController.Instance._Modules) {
+            module.Sensor.onTriggerEnter += collider => {
+                if (collider.gameObject != PlayerController.Instance.gameObject)
+                    return;
+                AnnouncementController.Instance.Schedule($"{module.Name} Module");
+            };
+        }
     }
 
     private void OnWaveStatusUpdated(bool active) {

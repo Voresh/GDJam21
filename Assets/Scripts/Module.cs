@@ -7,6 +7,8 @@ public class Module : MonoBehaviour {
     public GameObject DestroyedView;
     public PriceBar PriceBarPrefab;
     public HealthBar HealthBarPrefab;
+    public Sensor Sensor;
+    public string Name;
     public int RepairPrice;
     public float PriceHeightOffset = 2f;
 

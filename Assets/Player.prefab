@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Animator: {fileID: 8190671356311950343}
   NavMeshAgent: {fileID: 0}
-  Speed: 4
+  Speed: 5
   Health: {fileID: 8427765721377178369}
   BulletSpawner: {fileID: 5222279398849932618}
   AttackRadius: 5
