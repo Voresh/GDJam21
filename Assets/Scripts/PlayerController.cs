@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.AI;
 
 public class PlayerController : JamBase<PlayerController> {
     public Animator Animator;
+    public NavMeshAgent NavMeshAgent;
     public float Speed = 4f;
     public Health Health;
     public BulletSpawner BulletSpawner;
@@ -26,7 +28,8 @@ public class PlayerController : JamBase<PlayerController> {
 
     private void Start() {
         _Transform = transform;
-
+        NavMeshAgent = GetComponent<NavMeshAgent>();
+        NavMeshAgent.avoidancePriority = 0;
         Health.RestoreHealth();
     }
 
@@ -81,7 +84,9 @@ public class PlayerController : JamBase<PlayerController> {
         if (Input.GetKey(KeyCode.D))
             direction += Vector3.right;
         if (direction != Vector3.zero) {
-            _Transform.position += direction.normalized * ResultSpeed * Time.deltaTime;
+            NavMeshAgent.speed = ResultSpeed;
+            NavMeshAgent.Move(direction.normalized * ResultSpeed * Time.deltaTime);
+            //_Transform.position += ;
             if (NearbyTarget == null)
                 _Transform.forward = direction;
             Animator.SetFloat(_Speed, ResultSpeed);

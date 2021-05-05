@@ -1928,6 +1928,7 @@ GameObject:
   - component: {fileID: 5505160391668812854}
   - component: {fileID: 7327735730825696552}
   - component: {fileID: -2792957558222914717}
+  - component: {fileID: 1178353863265688299}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Untagged
@@ -2037,6 +2038,28 @@ MonoBehaviour:
   BulletPrefab: {fileID: 6039589743294439811, guid: 5cee982035aa9b148be160c3e6011d9b, type: 3}
   ShootPosition: {fileID: 3888422760926926627}
   Shooter: {fileID: 7756575183421020310}
+--- !u!195 &1178353863265688299
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984859426521596460}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 4
+  m_Acceleration: 20
+  avoidancePriority: 50
+  m_AngularSpeed: 300
+  m_StoppingDistance: 0.5
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 2
 --- !u!1 &7210703766448799169
 GameObject:
   m_ObjectHideFlags: 0
