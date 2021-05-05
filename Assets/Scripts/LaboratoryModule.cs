@@ -51,7 +51,7 @@ public class LaboratoryModule : Module {
     public bool UpgradeAvailable(string branchName, int progress) {
         var branch = Branches.First(_ => _.Name == branchName);
         var currentProgress = BranchProgress[branchName];
-        if (branch.Buffs.Count >= progress) {
+        if (progress >= branch.Buffs.Count) {
             Debug.Log("maximum progress!");
             return false;
         }
