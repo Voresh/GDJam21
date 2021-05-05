@@ -6,15 +6,18 @@ public class WarehouseModule : Module {
     public GameObject[] DropItems;
     private bool Work;
 
+    public GameObject Aidkit;
+
     public void Start() {
         Work = this.RepairedAtStart;
         BotSpawner.Instance.onWaveStatusUpdated += OnWaveStatusUpdated;
     }
 
     private void OnWaveStatusUpdated(bool active) {
-        if (!active && Work) {
+        if (!active && Work && Aidkit == null) {
             var Drop = Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)]);
             Drop.transform.position = DropPoint.position;
+            Aidkit = Drop;
         }
     }
 
