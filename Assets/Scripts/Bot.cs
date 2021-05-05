@@ -1,9 +1,11 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Bot : MonoBehaviour {
     public BulletSpawner BulletSpawner;
     public Animator Animator;
+    public NavMeshAgent NavMeshAgent;
     public float Speed = 2.5f;
     public float DetectionRadius = 7f;
     public float AttackRadius = 4f;
@@ -13,6 +15,7 @@ public class Bot : MonoBehaviour {
 
     private void Start() {
         Target = PlayerController.Instance.gameObject;
+        NavMeshAgent = GetComponent<NavMeshAgent>();
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         Health.RestoreHealth();
     }
@@ -31,7 +34,9 @@ public class Bot : MonoBehaviour {
         }
         var direction = Target.transform.position - transform.position;
         if (Target.GetComponent<Health>().HealthCurrent > 0 && direction.magnitude < DetectionRadius && direction.magnitude > AttackRadius) {
-            transform.position += direction.normalized * Speed * Time.deltaTime;
+            NavMeshAgent.speed = Speed;
+            NavMeshAgent.Move(direction.normalized * Speed * Time.deltaTime);
+            //transform.position += ;
             transform.forward = direction;
             Animator.SetFloat(_Speed, Speed);
         }

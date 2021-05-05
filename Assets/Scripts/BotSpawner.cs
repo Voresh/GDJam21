@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -13,16 +14,18 @@ public class BotSpawner : JamBase<BotSpawner> {
 
     public bool FirstWaveSpawned => CurrentWave != -1;
     public List<Bot> CurrentWaveBots = new List<Bot>();
-    public float SpawnRate => StartSpawnRate + Math.Max(0, CurrentWave * 5);
-    public float NextWaveTime => SpawnRate - (Time.time - _LastWaveTime);
+    public float SpawnRate => StartSpawnRate /*+ Math.Max(0, CurrentWave * 5)*/;
+    public float NextWaveTime => SpawnRate - (Time.time - _LastWaveCompleteTime);
     public event Action<int> onWaveSpawnStarted = _ => { };
     public event Action<Bot> onBotSpawned = _ => { };
+    public event Action<bool> onWaveStatusUpdated = _ => { };
     public Vector3 LastSpawnPoint { get; private set; }
 
-    private float _LastWaveTime;
+    private float _LastWaveCompleteTime;
+    public bool WaveInProgress { get; private set; }
 
     private void Start() {
-        _LastWaveTime = Time.time;
+        _LastWaveCompleteTime = Time.time;
     }
 
     private static int Fibonacci(int n) {
@@ -34,6 +37,14 @@ public class BotSpawner : JamBase<BotSpawner> {
     }
 
     private void Update() {
+        if (WaveInProgress) {
+            if (CurrentWaveBots.All(_ => _.Health.Dead)) {
+                _LastWaveCompleteTime = Time.time;
+                WaveInProgress = false;
+                onWaveStatusUpdated.Invoke(WaveInProgress);
+            }
+            return;
+        }
         if (NextWaveTime > 0f)
             return;
         CurrentWave++;
@@ -50,8 +61,9 @@ public class BotSpawner : JamBase<BotSpawner> {
             CurrentWaveBots.Add(botInstance);
             onBotSpawned.Invoke(botInstance);
         }
-        _LastWaveTime = Time.time;
         LastSpawnPoint = bounds.center;
+        WaveInProgress = true;
+        onWaveStatusUpdated.Invoke(WaveInProgress);
         onWaveSpawnStarted.Invoke(CurrentWave);
     }
 }

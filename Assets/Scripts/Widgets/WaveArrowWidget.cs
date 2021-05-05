@@ -8,7 +8,7 @@ namespace Widgets {
         private void Update() {
             if (!BotSpawner.Instance.FirstWaveSpawned 
                 || BotSpawner.Instance.CurrentWaveBots.Count == 0 
-                || BotSpawner.Instance.CurrentWaveBots.All(_ => _.Health.Dead)) {
+                || BotSpawner.Instance.CurrentWaveBots.All(_ => _.Health.Dead)) { //todo: remake to wave status upd
                 Arrow.gameObject.SetActive(false);
                 return;
             }
