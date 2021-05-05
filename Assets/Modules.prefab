@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c507856b5f37054b98282c84189297c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepairedAtStart: 1
+  RepairedAtStart: 0
   RepairedView: {fileID: 1784560076437431545}
   DestroyedView: {fileID: 6885740824306040068}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93d6d0f97ba6a144844f3fa89d68414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RepairedAtStart: 1
+  RepairedAtStart: 0
   RepairedView: {fileID: 2273853696819952802}
   DestroyedView: {fileID: 6396605435954488671}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
@@ -628,6 +628,10 @@ PrefabInstance:
     - target: {fileID: 1462480956, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -22.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
+      propertyPath: RepairedAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1642243923, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x

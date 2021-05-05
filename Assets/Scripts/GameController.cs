@@ -5,6 +5,7 @@ public class GameController : JamBase<GameController> {
         BotSpawner.Instance.onWaveSpawnStarted += OnWaveSpawnStarted;
         BotSpawner.Instance.onWaveStatusUpdated += OnWaveStatusUpdated;
         PlayerController.Instance.Health.onDeadStatusUpdated += OnDeadStatusUpdated;
+        AnnouncementController.Instance.Schedule($"Game Started");
     }
 
     private void OnWaveStatusUpdated(bool active) {
