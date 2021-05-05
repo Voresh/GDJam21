@@ -6,7 +6,9 @@ public class Bullet : MonoBehaviour {
     public float Lifetime = 10f;
     public GameObject Owner;
     private float _SpawnTime;
-    public int Damage = 7;
+    public int StartDamage = 1;
+    public int Damage => StartDamage + Mathf.RoundToInt(StartDamage * GlobalDamageBuff);
+    public float GlobalDamageBuff { get; set; }
     
     private void Start() {
         _SpawnTime = Time.time;

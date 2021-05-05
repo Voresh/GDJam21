@@ -2,11 +2,12 @@
 using UnityEngine;
 
 public class Health : MonoBehaviour {
-    public int HealthMax = 100;
+    public int StartMaxHealth = 100;
+    public int HealthMax => StartMaxHealth + Mathf.RoundToInt(StartMaxHealth * GlobalHealthBuff);
     private int _HealthCurrent;
     public float HeightOffset = 2.5f;
     public HealthBar HealthBarPrefab;
-    
+    public float GlobalHealthBuff { get; set; }
     private HealthBar _HealthBar;
     public bool Dead { get; private set; } = true;
     
