@@ -3,13 +3,7 @@ using UnityEngine;
 
 public class GameController : JamBase<GameController> {
     public void Start() {
-        PlayerController.Instance.onDied += OnPlayerDied;
         BotSpawner.Instance.onWaveSpawnStarted += OnWaveSpawnStarted;
-    }
-
-    private void OnPlayerDied() {
-        Debug.Log("end game");
-        BotSpawner.Instance.enabled = false;
     }
 
     private void OnWaveSpawnStarted(int wave) {

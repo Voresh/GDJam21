@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
@@ -18,26 +17,29 @@ public class PlayerController : JamBase<PlayerController> {
     public float SpeedBuff;
 
     public float ResultSpeed => Speed + SpeedBuff;
-    
-    public event Action onDied = () => { };
 
     private Collider NearbyTarget;
+    protected override void Awake() {
+        base.Awake();
+        Health.onDeadStatusUpdated += OnDeadStatusUpdated;
+    }
 
     private void Start() {
         _Transform = transform;
-        Health.onDeadStatusUpdated += OnDeadStatusUpdated;
+
         Health.RestoreHealth();
     }
 
     private void OnDeadStatusUpdated(bool dead) {
         if (dead) {
-            Animator.SetTrigger("Died");
+            Animator.SetBool("Died", true);
             BulletSpawner.enabled = false;
             GetComponent<Collider>().enabled = false;
-            onDied.Invoke();
         }
         else {
-            //todo: resp
+            Animator.SetBool("Died", false);
+            BulletSpawner.enabled = true;
+            GetComponent<Collider>().enabled = true;
         }
     }
 
