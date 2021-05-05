@@ -358,6 +358,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldsModule
       objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3895909479530253931, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
