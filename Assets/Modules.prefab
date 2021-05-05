@@ -140,6 +140,7 @@ MonoBehaviour:
   RepairPrice: 10
   PriceHeightOffset: 3
   Health: {fileID: 0}
+  SpawnRateBuff: 5
 --- !u!114 &431249649897925360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,8 +278,8 @@ MonoBehaviour:
   RepairPrice: 10
   PriceHeightOffset: 3
   Health: {fileID: 0}
-  HealRate: 2
-  HealAmount: 2
+  HealRate: 1
+  HealAmount: 7
   SpawnPoint: {fileID: 1833459066267640782}
 --- !u!1 &7327165386026106489
 GameObject:

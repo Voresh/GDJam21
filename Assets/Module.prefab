@@ -105,7 +105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f42c49c5824b668249b8218d7f65b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartMaxHealth: 1000
+  StartMaxHealth: 1500
   HeightOffset: 3
   HealthBarPrefab: {fileID: 0}
   GlobalHealthBuff: 0
@@ -127,8 +127,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 1273635185027409986}
+  Name: 
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
 --- !u!65 &3895909479530253935
 BoxCollider:
   m_ObjectHideFlags: 0
