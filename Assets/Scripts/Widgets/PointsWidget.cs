@@ -16,7 +16,7 @@ public class PointsWidget : MonoBehaviour {
         RepairPointsText.text = "Repair points: 0";
         UpgradePointsText.text = "Upgrade points: 0";
         PointsController.Instance.onPointsUpdated += OnRepairPointsUpdated;
-        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance.Modules
             .First(_ => _ is LaboratoryModule);
         laboratoryModule.onPointsUpdated += OnUpgradePointsUpdated;
     }

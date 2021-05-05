@@ -19,7 +19,7 @@ public class Bot : MonoBehaviour {
     public LayerMask LevelLayer;
     
     private void Start() {
-        TargetModules = ModulesController.Instance._Modules.ToList();
+        TargetModules = ModulesController.Instance.Modules.ToList();
         NavMeshAgent = GetComponent<NavMeshAgent>();
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         Health.RestoreHealth();

@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ModulesController : JamBase<ModulesController> {
-    public List<Module> _Modules = new List<Module>();
+    [FormerlySerializedAs("_Modules")]
+    public List<Module> Modules = new List<Module>();
     public float InteractionRadius = 3f;
     private Module _ClosestModule;
 
@@ -12,7 +14,7 @@ public class ModulesController : JamBase<ModulesController> {
     public float GlobalRepairBuff { get; set; }
 
     private void Update() {
-        var closestModule = _Modules
+        var closestModule = Modules
             .Where(_ => !_.Repaired)
             .OrderBy(_ => (_.transform.position - PlayerController.Instance.Position).sqrMagnitude)
             .FirstOrDefault();

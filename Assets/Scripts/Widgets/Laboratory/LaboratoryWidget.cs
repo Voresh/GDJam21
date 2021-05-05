@@ -22,7 +22,7 @@ public class LaboratoryWidget : MonoBehaviour {
 
     private void OnEnable() {
         Time.timeScale = 0;
-        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules.
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance.Modules.
             First(_ => _ is LaboratoryModule);
         laboratoryModule.onPointsUpdated += OnPointsUpdated;
         laboratoryModule.onUpgradesUpdated += OnUpgradesUpdated;
@@ -30,7 +30,7 @@ public class LaboratoryWidget : MonoBehaviour {
     }
 
     private void OnUpgradesUpdated() {
-        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance.Modules
             .First(_ => _ is LaboratoryModule);
         Rebuild(laboratoryModule);
     }
@@ -54,7 +54,7 @@ public class LaboratoryWidget : MonoBehaviour {
 
     private void OnDisable() {
         Time.timeScale = 1;
-        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance.Modules
             .First(_ => _ is LaboratoryModule);
         laboratoryModule.onPointsUpdated -= OnPointsUpdated;
     }

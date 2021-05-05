@@ -13,7 +13,7 @@ public class LaboratoryBranchWidget : MonoBehaviour {
             Destroy(buff.gameObject);
         }
         BuffWidgets.Clear();
-        var laboratoryModule = (LaboratoryModule) ModulesController.Instance._Modules
+        var laboratoryModule = (LaboratoryModule) ModulesController.Instance.Modules
             .First(_ => _ is LaboratoryModule);
         var branch = laboratoryModule.Branches
             .First(_ => _.Name == branchId);
