@@ -12,9 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 919cc70a072d48259c61cd33dd7aa9f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  LevelLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  AttackRadius: 5
   StoppingDistance: 0.5
   TargetPointIndex: 0
   NavMeshAgent: {fileID: 0}
+  Animator: {fileID: 0}
+  BulletSpawner: {fileID: 0}
 --- !u!1001 &1903293788118029792
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24,7 +33,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6984859426521596460, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Name
-      value: SecurityBot
+      value: SecurityBot Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7756575183421020310, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_RootOrder
