@@ -57,8 +57,6 @@ public class BotSpawner : JamBase<BotSpawner> {
             var position = new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x), UnityEngine.Random.Range(bounds.min.y, bounds.max.y), UnityEngine.Random.Range(bounds.min.z, bounds.max.z));
             var botInstance = Instantiate(BotPrefab, position, Quaternion.identity);
             var botHealth = botInstance.GetComponent<Health>();
-            botHealth.HealthMax = 10;
-            botHealth.HealthCurrent = 10;
             CurrentWaveBots.Add(botInstance);
             onBotSpawned.Invoke(botInstance);
         }
