@@ -2,9 +2,9 @@ using System.Collections;
 using UnityEngine;
 
 public class WarehouseModule : Module {
-    public GameObject DropPoint;
+    public Transform DropPoint;
     public GameObject[] DropItems;
-    public bool Work;
+    private bool Work;
 
     public void Start() {
         Work = this.RepairedAtStart;
@@ -14,7 +14,7 @@ public class WarehouseModule : Module {
     private void OnWaveStatusUpdated(bool active)
     {
         if (!active && Work)
-            Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)], DropPoint.transform);
+            Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)], DropPoint);
     }
 
     protected override void UpdateEffects(bool active)
