@@ -19,7 +19,7 @@ public class Bot : MonoBehaviour {
 
     private void OnDeadStatusUpdated(bool dead) {
         if (dead) {
-            Animator.SetTrigger("Died");
+            Animator.SetBool("Died", true);
             GetComponent<Collider>().enabled = false;
         }
     }

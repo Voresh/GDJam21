@@ -31,7 +31,10 @@ public class Module : MonoBehaviour {
         if (RepairedAtStart)
             _Health.RestoreHealth();
         OnDeadStatusUpdated(_Health.Dead);
+        AddStaticEffects();
     }
+
+    protected virtual void AddStaticEffects() { }
 
     private void OnDeadStatusUpdated(bool dead) {
         RepairedView.SetActive(!dead);
