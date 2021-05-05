@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f65100a7539d01d4a98a3b58b204cb88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WShootRate: 0.5
+  WShootRate: 0.7
   wBulletPrefab: {fileID: 6039589743294439811, guid: 5cee982035aa9b148be160c3e6011d9b, type: 3}
 --- !u!1 &3967680610084939623
 GameObject:
