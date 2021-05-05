@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21f42c49c5824b668249b8218d7f65b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthMax: 10
+  StartMaxHealth: 100
   HeightOffset: 3
   HealthBarPrefab: {fileID: 0}
 --- !u!114 &3895909479530253931
@@ -80,8 +80,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0.5, z: 0}
+  m_Size: {x: 1, y: 1.6859109, z: 1}
+  m_Center: {x: 0, y: 0.84295547, z: 0}
 --- !u!1001 &1325817035341583429
 PrefabInstance:
   m_ObjectHideFlags: 0

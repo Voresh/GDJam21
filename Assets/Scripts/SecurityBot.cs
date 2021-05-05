@@ -22,6 +22,7 @@ public class SecurityBot : MonoBehaviour {
         Animator = GetComponent<Animator>();
         BulletSpawner = GetComponent<BulletSpawner>();
         Health = GetComponent<Health>();
+        Health.RestoreHealth();
         NavMeshAgent.autoBraking = false;
         NavMeshAgent.SetDestination(Route[TargetPointIndex].position);
         Animator.SetFloat("Speed", 1f);

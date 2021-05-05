@@ -35,7 +35,6 @@ public class Health : MonoBehaviour {
     private void Start() {
         if (HealthBarPrefab != null)
             _HealthBar = Instantiate(HealthBarPrefab);
-        RestoreHealth();
     }
 
     public void RestoreHealth() {
