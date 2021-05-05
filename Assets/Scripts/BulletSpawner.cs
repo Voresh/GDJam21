@@ -2,7 +2,7 @@
 using UnityEngine.Serialization;
 
 public class BulletSpawner : MonoBehaviour {
-    public float ShootRate = 0.5f;
+    public float ShootRate = 0.15f;
     [FormerlySerializedAs("Bullet")]
     public Bullet BulletPrefab;
     public Transform ShootPosition;
