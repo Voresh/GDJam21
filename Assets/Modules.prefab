@@ -81,6 +81,7 @@ MonoBehaviour:
       Amount: -0.5
       Price: 30
     Name: Repair
+  UnitDeathPoints: 5
 --- !u!1 &1584002669659673574
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +178,8 @@ MonoBehaviour:
   - {fileID: 7666229884826168926, guid: 4d8c07ec648745340a28f2a703b0cc3e, type: 3}
   - {fileID: 2092244212595787283, guid: 10cb1110cc494ee438f00175b03f592f, type: 3}
   Weapon: {fileID: 0}
+  WeaponIndex: 0
+  EquippedWeaponIndex: 999
 --- !u!1 &4085604425111925050
 GameObject:
   m_ObjectHideFlags: 0

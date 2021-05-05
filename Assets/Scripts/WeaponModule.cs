@@ -10,6 +10,8 @@ public class WeaponModule : Module {
     private bool Work;
 
     public GameObject Weapon;
+    public int WeaponIndex;
+    public int EquippedWeaponIndex = 999;
 
     protected override void AddStaticEffects() {
         Work = this.RepairedAtStart;
@@ -19,9 +21,15 @@ public class WeaponModule : Module {
     private void OnWaveStatusUpdated(bool active) {
         if (!active && Work && Weapon == null)
         {
-            var Drop = Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)]);
+            do {
+                WeaponIndex = Random.Range(0, DropItems.Length - 1);
+            }
+            while (WeaponIndex == EquippedWeaponIndex);
+
+            var Drop = Instantiate(DropItems[WeaponIndex]);
             Drop.transform.position = DropPoint.position;
             Weapon = Drop;
+            EquippedWeaponIndex = WeaponIndex;
         }
     }
 
