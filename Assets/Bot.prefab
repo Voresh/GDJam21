@@ -21,10 +21,8 @@ MonoBehaviour:
   Speed: 2.5
   DetectionRadius: 10
   AttackRadius: 6
-  TargetPlayer: {fileID: 0}
   TargetModules: []
   Health: {fileID: 4102634361452438805}
-  MoveToTarget: {fileID: 0}
   LevelLayer:
     serializedVersion: 2
     m_Bits: 1
