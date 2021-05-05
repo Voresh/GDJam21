@@ -22,7 +22,7 @@ public class WeaponModule : Module {
         if (!active && Work && Weapon == null)
         {
             do {
-                WeaponIndex = Random.Range(0, DropItems.Length - 1);
+              WeaponIndex = Random.Range(0, DropItems.Length);
             }
             while (WeaponIndex == EquippedWeaponIndex);
 

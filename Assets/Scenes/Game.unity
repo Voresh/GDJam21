@@ -108,8 +108,8 @@ NavMeshSettings:
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
-    agentSlope: 45
-    agentClimb: 0.4
+    agentSlope: 1
+    agentClimb: 0.09
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
@@ -5356,34 +5356,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 218080189147078206, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Reactor
-      objectReference: {fileID: 0}
-    - target: {fileID: 431249649897925360, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Warehouse
-      objectReference: {fileID: 0}
-    - target: {fileID: 564467361072665906, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Medical
-      objectReference: {fileID: 0}
-    - target: {fileID: 757247902922295223, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Weapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3469439435113781266, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Security
-      objectReference: {fileID: 0}
-    - target: {fileID: 3498461108338558623, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Laboratory
-      objectReference: {fileID: 0}
-    - target: {fileID: 4505965521278953720, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Shields
-      objectReference: {fileID: 0}
     - target: {fileID: 7327165386026106489, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
       propertyPath: m_Name
       value: Modules
@@ -5431,10 +5403,6 @@ PrefabInstance:
     - target: {fileID: 7327165386026106491, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8893774311380940612, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}
-      propertyPath: Name
-      value: Oxygen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1c1beb8ad90a154482b2ccb7218582e, type: 3}

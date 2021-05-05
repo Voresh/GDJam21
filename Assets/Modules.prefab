@@ -18,9 +18,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 3376980941601391386}
-  Name: 
+  Name: Reactor
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
 --- !u!114 &3498461108338558623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39,9 +40,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 3119284288153001884}
-  Name: 
+  Name: Laboratory
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
   Branches:
   - Buffs:
     - Type: 0
@@ -134,9 +136,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 895162653784143968}
-  Name: 
+  Name: Shields
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
 --- !u!114 &431249649897925360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,9 +158,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 1715745961300829615}
-  Name: 
+  Name: Warehouse
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
   DropPoint: {fileID: 9123259226248813159}
   DropItems:
   - {fileID: 4487989998304773478, guid: 8db0da073c2a6164d852f1e693e59cd4, type: 3}
@@ -180,9 +184,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 1190590568802647540}
-  Name: 
+  Name: Weapon
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
   DropPoint: {fileID: 2004766315035925221}
   DropItems:
   - {fileID: 7666229884826168926, guid: 4d8c07ec648745340a28f2a703b0cc3e, type: 3}
@@ -268,9 +273,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 4761012259552182807}
-  Name: 
+  Name: Medical
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
   HealRate: 2
   HealAmount: 2
   SpawnPoint: {fileID: 1833459066267640782}
@@ -353,9 +359,10 @@ MonoBehaviour:
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
   Sensor: {fileID: 6585178702038995489}
-  Name: 
+  Name: Oxygen
   RepairPrice: 10
   PriceHeightOffset: 3
+  Health: {fileID: 0}
   DamageRate: 1
   DamageAmount: 1
 --- !u!1001 &83615263497786806
@@ -718,7 +725,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8659932, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -44.7
+      value: -80
       objectReference: {fileID: 0}
     - target: {fileID: 8659932, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -726,7 +733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 457579291, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 27
+      value: -5.049999
       objectReference: {fileID: 0}
     - target: {fileID: 457579291, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -734,27 +741,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1099706394, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29
+      value: -61.05
       objectReference: {fileID: 0}
     - target: {fileID: 1099706394, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -37.4
+      value: -39.048164
       objectReference: {fileID: 0}
     - target: {fileID: 1295578837, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -32.05
       objectReference: {fileID: 0}
     - target: {fileID: 1295578837, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -30.3
+      value: -27.048164
       objectReference: {fileID: 0}
     - target: {fileID: 1462480956, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -15
+      value: -48
       objectReference: {fileID: 0}
     - target: {fileID: 1462480956, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
       value: -15.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
+      propertyPath: Name
+      value: Security
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: RepairedAtStart
@@ -762,7 +773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1642243923, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 28.8
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 1642243923, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -770,7 +781,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1925325547, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.3
+      value: -61.35
       objectReference: {fileID: 0}
     - target: {fileID: 1925325547, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -778,11 +789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2137838022, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.6
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 2137838022, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -1.0481639
       objectReference: {fileID: 0}
     - target: {fileID: 3559268651001177905, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_RootOrder

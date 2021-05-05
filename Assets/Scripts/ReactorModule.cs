@@ -14,12 +14,13 @@ public class ReactorModule : Module {
             Time.timeScale = 0f;
             StartCoroutine(Delay(() => {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                Time.timeScale = 1;
             }, 2f));
         }    
     }
 
     private IEnumerator Delay(Action action, float delay) {
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSecondsRealtime(delay);
         action.Invoke();
     }
 }

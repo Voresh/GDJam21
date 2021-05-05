@@ -10,7 +10,13 @@ public class GameController : JamBase<GameController> {
             module.Sensor.onTriggerEnter += collider => {
                 if (collider.gameObject != PlayerController.Instance.gameObject)
                     return;
-                AnnouncementController.Instance.Schedule($"{module.Name} Module");
+                AnnouncementController.Instance.Schedule($"{module.Name} module");
+            };
+            module.Health.onDeadStatusUpdated += dead => {
+                if (dead)
+                    AnnouncementController.Instance.Schedule($"{module.Name} module destroyed!");
+                else
+                    AnnouncementController.Instance.Schedule($"{module.Name} module repaired!");
             };
         }
     }

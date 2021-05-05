@@ -12,7 +12,7 @@ public class Module : MonoBehaviour {
     public int RepairPrice;
     public float PriceHeightOffset = 2f;
 
-    protected Health Health;
+    public Health Health;
     private PriceBar _PriceBar;
     private HealthBar _HealthBar;
     private bool _LastDeadStatus; //hack
@@ -32,6 +32,8 @@ public class Module : MonoBehaviour {
         }
         if (RepairedAtStart)
             Health.RestoreHealth();
+        else
+            Health.HealthCurrent = 0;
         OnDeadStatusUpdated(Health.Dead);
         AddStaticEffects();
     }
