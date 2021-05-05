@@ -13,10 +13,10 @@ namespace Widgets {
                 return;
             }
             Arrow.gameObject.SetActive(true);
-            var worldDirection = BotSpawner.Instance.LastSpawnPoint - PlayerController.Instance.Position;
+            var worldDirection = BotSpawner.Instance.CurrentWaveBots.First(_ => !_.Health.Dead).transform.position - PlayerController.Instance.Position;
             var rotation = Quaternion.LookRotation(worldDirection, Vector3.up);
             var y = rotation.eulerAngles.y;
-            Arrow.rotation = Quaternion.Euler(0f, 0f, -y);
+            Arrow.rotation = Quaternion.Slerp(Arrow.rotation, Quaternion.Euler(0f, 0f, -y), 7f * Time.deltaTime);
         }
     }
 }
