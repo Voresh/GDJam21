@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
@@ -14,6 +15,10 @@ public class PlayerController : JamBase<PlayerController> {
     public float AttackRadius = 7f;
     public LayerMask EnemyLayer;
 
+    public float SpeedBuff;
+
+    public float ResultSpeed => Speed + SpeedBuff;
+    
     public event Action onDied = () => { };
 
     private Collider NearbyTarget;
@@ -74,10 +79,10 @@ public class PlayerController : JamBase<PlayerController> {
         if (Input.GetKey(KeyCode.D))
             direction += Vector3.right;
         if (direction != Vector3.zero) {
-            _Transform.position += direction.normalized * Speed * Time.deltaTime;
+            _Transform.position += direction.normalized * ResultSpeed * Time.deltaTime;
             if (NearbyTarget == null)
                 _Transform.forward = direction;
-            Animator.SetFloat(_Speed, Speed);
+            Animator.SetFloat(_Speed, ResultSpeed);
         }
         else {
             Animator.SetFloat(_Speed, 0f);

@@ -14,7 +14,7 @@ public class Health : MonoBehaviour {
         get => _HealthCurrent;
         set {
             var lastHealth = _HealthCurrent;
-            _HealthCurrent = Mathf.Max(0, value);
+            _HealthCurrent = Mathf.Clamp(value, 0, HealthMax);
             if (!Dead && _HealthCurrent == 0) {
                 Dead = true;
                 onDeadStatusUpdated.Invoke(Dead);
