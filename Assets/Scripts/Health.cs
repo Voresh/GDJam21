@@ -47,7 +47,7 @@ public class Health : MonoBehaviour {
         if (_HealthBar == null)
             return;
         _HealthBar.Fill = (float) HealthCurrent / HealthMax;
-        _HealthBar.transform.position = transform.position + Vector3.up * HeightOffset + Vector3.forward * 0.5f;
+        _HealthBar.transform.position = Vector3.Lerp(_HealthBar.transform.position, transform.position + Vector3.up * HeightOffset + Vector3.forward * 0.5f, Time.deltaTime * 10f);
         _HealthBar.gameObject.SetActive(HealthCurrent > 0);
     }
 }

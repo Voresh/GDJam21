@@ -11,7 +11,56 @@ public class BotSpawner : JamBase<BotSpawner> {
     public List<Collider> SpawnPoints;
     public int CurrentWave = -1;
     public float FirstWaveDelay = 10;
-    public int BotsCount => Fibonacci(CurrentWave + 1) * 5;
+    
+    public List<int> BotsCountHardcode = new List<int> {
+        5, 
+        5, 
+        10, 
+        10, 
+        15, 
+        15, 
+        17,
+        17,
+        20, 
+        20,
+        23,
+        23,
+        25,
+        25,
+        27,
+        27,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+        30,
+    };
+    
+    public int BotsCount => BotsCountHardcode[CurrentWave]; /*Fibonacci(CurrentWave + 1) * 5;*/
 
     public bool FirstWaveSpawned => CurrentWave != -1;
     public List<Bot> CurrentWaveBots = new List<Bot>();
