@@ -47,8 +47,20 @@ PrefabInstance:
       propertyPath: BulletPrefab
       value: 
       objectReference: {fileID: 2401218503803063804, guid: dbe09ec2163b1704f9412d3923243083, type: 3}
+    - target: {fileID: 257683170821850816, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 257683170821850816, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1178353863265688299, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Radius
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5505160391668812854, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: m_Mass
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6984859426521596460, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
