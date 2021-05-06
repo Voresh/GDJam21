@@ -25,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2088918667177864947}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 2092244212595787278}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &8046596589689626055
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -141,7 +141,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WShootRate: 1
   wBulletPrefab: {fileID: 5337075668158279481, guid: 272deea7ff4fdca4fb5b03817321230b, type: 3}
-  ModelWeapon: {fileID: 2088918667177864947}
-  WeaponLayer:
-    serializedVersion: 2
-    m_Bits: 512
+  ModelWeapon: {fileID: 2679532251053557910, guid: 62cb54a74c1f2fc4aa8b64873a7eea86, type: 3}
