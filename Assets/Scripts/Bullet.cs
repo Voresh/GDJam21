@@ -22,17 +22,17 @@ public class Bullet : MonoBehaviour {
         if (Physics.Raycast(transform.position, transform.forward, out var hit, resultSpeed * 1.25f, Layers, QueryTriggerInteraction.Collide)) {
             var target = hit.transform.gameObject;
             if (CheckTargetValid(target)) {
-                DamageTarget(target);
+                DamageTarget(target, 1f);
                 Destroy(gameObject);
             }
         }
         transform.position += transform.forward * resultSpeed;
     }
 
-    protected virtual void DamageTarget(GameObject target) {
+    protected virtual void DamageTarget(GameObject target, float multiplier) {
         var health = target.GetComponent<Health>();
         if (health != null)
-            health.HealthCurrent -= Damage;
+            health.HealthCurrent -= Mathf.RoundToInt(Damage * multiplier);
     }
 
     protected bool CheckTargetValid(GameObject target) {
