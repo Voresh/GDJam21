@@ -6,6 +6,8 @@ public class CameraController : JamBase<CameraController> {
     public float CameraHeight;
     public float CameraRange;
     public float CameraRotation;
+    public float Damping = 7f;
+    private Vector3 velocity = Vector3.zero;
 
     void Start()
     {
@@ -16,6 +18,10 @@ public class CameraController : JamBase<CameraController> {
     {
         var PlayerPosition = PlayerController.Instance.Position;
         var CameraPosition = new Vector3(PlayerPosition.x, PlayerPosition.y + CameraHeight, PlayerPosition.z + CameraRange);
-        transform.position = CameraPosition;
+        var distance = Vector3.Distance(transform.position, CameraPosition);
+        var smoothTime = distance * (Time.deltaTime * Damping);
+
+        transform.position = Vector3.SmoothDamp(transform.position, CameraPosition, ref velocity, smoothTime);
+
     }
 }
