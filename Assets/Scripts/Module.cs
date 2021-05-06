@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 public class Module : MonoBehaviour {
@@ -20,8 +21,11 @@ public class Module : MonoBehaviour {
     
     public bool Repaired => !Health.Dead;
 
-    private void Start() {
+    private void Awake() {
         Health = GetComponent<Health>();
+    }
+
+    private void Start() {
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         if (PriceBarPrefab != null) {
             _PriceBar = Instantiate(PriceBarPrefab);

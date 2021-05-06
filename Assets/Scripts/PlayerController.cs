@@ -21,6 +21,8 @@ public class PlayerController : JamBase<PlayerController> {
 
     public float ResultSpeed => Speed + SpeedBuff;
 
+    public Vector3 TargetDirection;
+    
     private Collider NearbyTarget;
     protected override void Awake() {
         base.Awake();
@@ -31,6 +33,8 @@ public class PlayerController : JamBase<PlayerController> {
         _Transform = transform;
         NavMeshAgent = GetComponent<NavMeshAgent>();
         NavMeshAgent.avoidancePriority = 0;
+        NavMeshAgent.updateRotation = false;
+        TargetDirection = transform.forward;
         Health.RestoreHealth();
     }
 
@@ -66,7 +70,8 @@ public class PlayerController : JamBase<PlayerController> {
             }
             else
             {
-                transform.LookAt(NearbyTarget.transform);
+                // transform.LookAt(NearbyTarget.transform);
+                TargetDirection = (NearbyTarget.transform.position - transform.position).normalized;
                 BulletSpawner.enabled = true;
             }
         }
@@ -89,11 +94,13 @@ public class PlayerController : JamBase<PlayerController> {
             NavMeshAgent.Move(direction.normalized * ResultSpeed * Time.deltaTime);
             //_Transform.position += ;
             if (NearbyTarget == null)
-                _Transform.forward = direction;
+                TargetDirection = direction;
+                // _Transform.forward = direction;
             Animator.SetFloat(_Speed, ResultSpeed);
         }
         else {
             Animator.SetFloat(_Speed, 0f);
         }
+        transform.forward = Vector3.Slerp(transform.forward, TargetDirection, Time.deltaTime * 24f);
     }
 }

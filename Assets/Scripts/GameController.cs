@@ -1,7 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class GameController : JamBase<GameController> {
-    public void Start() {
+    public IEnumerator Start() {
         BotSpawner.Instance.onWaveSpawnStarted += OnWaveSpawnStarted;
         BotSpawner.Instance.onWaveStatusUpdated += OnWaveStatusUpdated;
         PlayerController.Instance.Health.onDeadStatusUpdated += OnDeadStatusUpdated;
@@ -12,6 +13,9 @@ public class GameController : JamBase<GameController> {
                     return;
                 AnnouncementController.Instance.Schedule($"{module.Name} module");
             };
+        }
+        yield return null; //hack to skip modules initial state announcements
+        foreach (var module in ModulesController.Instance.Modules) {
             module.Health.onDeadStatusUpdated += dead => {
                 if (dead)
                     AnnouncementController.Instance.Schedule($"{module.Name} module destroyed!");

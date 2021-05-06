@@ -30,8 +30,12 @@ public class AnnouncementController : JamBase<AnnouncementController> {
                 Text.text = _CurrentText;
                 Group.alpha = AlphaCurve.Evaluate(timePast / AnnouncementDuration);
             }
+            else {
+                Group.alpha = 0f;
+            }
         }
         else {
+            Group.alpha = 0f;
             if (_Scheduled.Count > 0) {
                 _CurrentText = _Scheduled.Dequeue();
                 _InProgress = true;

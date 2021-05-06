@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Widgets;
 
 public class StatusWidget : MonoBehaviour {
     public Transform Root;
@@ -23,10 +24,12 @@ public class StatusWidget : MonoBehaviour {
     private void Update() {
         foreach (var (widget, module) in _Widgets) {
             widget.Arrow.gameObject.SetActive(!module.Repaired);
-            var worldDirection = module.transform.position - PlayerController.Instance.Position;
-            var rotation = Quaternion.LookRotation(worldDirection, Vector3.up);
-            var y = rotation.eulerAngles.y;
-            widget.Arrow.rotation = Quaternion.Slerp(widget.Arrow.rotation, Quaternion.Euler(0f, 0f, -y), 10f * Time.deltaTime);
+            var targetRotation = WaveArrowWidget.GetRouteDirection(module.transform.position);
+            widget.Arrow.rotation = Quaternion.Slerp(widget.Arrow.rotation, targetRotation, 10f * Time.deltaTime);
+            if (module.Repaired)
+                widget.transform.SetAsFirstSibling();
+            else 
+                widget.transform.SetAsLastSibling();
         }
     }
 
