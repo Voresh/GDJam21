@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6039589743294439810}
   - component: {fileID: 6039589743294439811}
   m_Layer: 7
-  m_Name: Bullet
+  m_Name: BulletPistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   Speed: 20
   Lifetime: 10
   Owner: {fileID: 0}
-  StartDamage: 10
+  StartDamage: 20
 --- !u!1 &7286107078317141164
 GameObject:
   m_ObjectHideFlags: 0

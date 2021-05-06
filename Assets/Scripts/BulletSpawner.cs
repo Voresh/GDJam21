@@ -10,13 +10,14 @@ public class BulletSpawner : MonoBehaviour {
 
     private float _LastShotTime;
     public float GlobalDamageBuff;
+    public Vector3 ShootTargetPosition;
 
     private void Update() {
         if (Time.time - _LastShotTime < ShootRate)
             return;
         var bulletInstance = Instantiate(BulletPrefab);
         bulletInstance.transform.position = ShootPosition.position;
-        bulletInstance.transform.forward = Shooter.forward;
+        bulletInstance.transform.forward = ShootTargetPosition - transform.position;
         bulletInstance.Owner = Shooter.gameObject;
         bulletInstance.GlobalDamageBuff = GlobalDamageBuff;
         _LastShotTime = Time.time;

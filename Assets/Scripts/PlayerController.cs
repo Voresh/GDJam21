@@ -47,7 +47,6 @@ public class PlayerController : JamBase<PlayerController> {
         }
         else {
             Animator.SetBool("Died", false);
-            BulletSpawner.enabled = true;
             GetComponent<Collider>().enabled = true;
         }
     }
@@ -73,6 +72,7 @@ public class PlayerController : JamBase<PlayerController> {
             {
                 // transform.LookAt(NearbyTarget.transform);
                 TargetDirection = (NearbyTarget.transform.position - transform.position).normalized;
+                BulletSpawner.ShootTargetPosition = NearbyTarget.transform.position;
                 BulletSpawner.enabled = true;
             }
         }

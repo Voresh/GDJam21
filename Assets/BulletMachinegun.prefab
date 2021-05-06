@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7629860415896376514}
   - component: {fileID: 1148742588680458375}
   m_Layer: 7
-  m_Name: BulletHeavy
+  m_Name: BulletMachinegun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,7 +51,7 @@ MonoBehaviour:
   Speed: 10
   Lifetime: 10
   Owner: {fileID: 0}
-  StartDamage: 10
+  StartDamage: 5
 --- !u!1 &3214260891436052309
 GameObject:
   m_ObjectHideFlags: 0

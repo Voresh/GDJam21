@@ -53,6 +53,7 @@ public class SecurityBot : MonoBehaviour {
             .FirstOrDefault();
         if (target != null) { //todo: check raycast too
             transform.LookAt(target.transform);
+            BulletSpawner.ShootTargetPosition = target.transform.position;
             BulletSpawner.enabled = true;
             NavMeshAgent.ResetPath();
             Animator.SetFloat("Speed", 0f);

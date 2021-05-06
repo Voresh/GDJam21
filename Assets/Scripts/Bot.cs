@@ -106,6 +106,7 @@ public class Bot : MonoBehaviour {
 
     private void Attack(Transform target) {
         transform.LookAt(target);
+        BulletSpawner.ShootTargetPosition = target.position;
         BulletSpawner.enabled = true;
         NavMeshAgent.ResetPath();
         Animator.SetFloat("Speed", 0f);
