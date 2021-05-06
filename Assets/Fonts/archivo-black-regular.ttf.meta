@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: cb3e3137475473c4b9a4751b1d4587ac
+guid: 8dfe31d7116721643b400449c23b2edc
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Archivo Narrow
+  - Archivo Black
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
