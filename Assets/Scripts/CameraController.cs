@@ -22,7 +22,7 @@ public class CameraController : JamBase<CameraController> {
         _CurrentDamping = Mathf.Lerp(_CurrentDamping, PlayerController.Instance.NearbyTarget != null ? SoftDamping : Damping, DampingDamping * Time.deltaTime);
         var targetPosition = PlayerController.Instance.Position
             + Vector3.up * (PlayerController.Instance.NearbyTarget != null ? MaxCameraHeight : CameraHeight);
-        transform.position = Vector3.Slerp(transform.position, targetPosition, Time.deltaTime * _CurrentDamping);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * _CurrentDamping);
         //var Target = PlayerController.Instance.NearbyTarget;
         //var PlayerPosition = PlayerController.Instance.Position;
         //var CameraPosition = new Vector3(PlayerPosition.x, PlayerPosition.y + CameraHeight, PlayerPosition.z + CameraRange);

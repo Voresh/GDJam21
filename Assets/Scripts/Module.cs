@@ -9,6 +9,8 @@ public class Module : MonoBehaviour, IRepairable {
     public GameObject DestroyedView;
     public PriceBar PriceBarPrefab;
     public HealthBar HealthBarPrefab;
+    public float HealRate = 1f;
+    public int HealAmount = 5;
     public Sensor Sensor;
     public string Name;
     public string Description;
@@ -22,7 +24,7 @@ public class Module : MonoBehaviour, IRepairable {
     private HealthBar _HealthBar;
     private bool _LastDeadStatus; //hack
     private bool _Initialized;
-    
+    private float _LastHealTime;
     public Vector3 RepairablePosition => transform.position;
     public bool Repaired => !Health.Dead;
     public int RepairPrice => InitialRepairPrice;
@@ -73,6 +75,10 @@ public class Module : MonoBehaviour, IRepairable {
             _HealthBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
             _HealthBar.Fill = (float) Health.HealthCurrent / Health.HealthMax;
         }
+        if (!Health.Dead && Time.time - _LastHealTime > HealRate) {
+            Health.HealthCurrent += HealAmount;
+            _LastHealTime = Time.time;
+        } 
     }
 
     public void Repair() {

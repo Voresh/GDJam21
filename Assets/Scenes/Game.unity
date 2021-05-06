@@ -139,8 +139,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
+      propertyPath: Damping
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
       propertyPath: CameraRange
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
+      propertyPath: SoftDamping
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
       propertyPath: CameraHeight
@@ -149,6 +157,10 @@ PrefabInstance:
     - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
       propertyPath: CameraRotation
       value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 717108694565565181, guid: 4238d0f036043034a8c37ae053443767, type: 3}
+      propertyPath: DampingDamping
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 717108694565565182, guid: 4238d0f036043034a8c37ae053443767, type: 3}
       propertyPath: m_RootOrder
