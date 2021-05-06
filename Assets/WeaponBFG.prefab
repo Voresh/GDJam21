@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 2092244212595787278}
   - component: {fileID: 2092244212595787281}
   - component: {fileID: 5209533202177754413}
+  - component: {fileID: 8803562026733841940}
   m_Layer: 9
   m_Name: WeaponBFG
   m_TagString: Untagged
@@ -142,3 +143,16 @@ MonoBehaviour:
   WShootRate: 1.5
   wBulletPrefab: {fileID: 5337075668158279481, guid: 272deea7ff4fdca4fb5b03817321230b, type: 3}
   ModelWeapon: {fileID: 2679532251053557910, guid: 62cb54a74c1f2fc4aa8b64873a7eea86, type: 3}
+--- !u!114 &8803562026733841940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092244212595787283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55cda98945423a45ad391ae01dca2ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotationSpeed: 45
