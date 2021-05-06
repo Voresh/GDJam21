@@ -40,6 +40,8 @@ public class Door : MonoBehaviour, IRepairable {
         foreach (var module in ModulesToUnlock) {
             if (!module.Unlocked)
                 module.Unlocked = true;
+            if (!module.Repaired)
+                module.Repair();
         }
         foreach (var respawn in RespawnesToUnlock) {
             respawn.SetActive(true);
