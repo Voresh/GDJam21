@@ -20,7 +20,7 @@ MonoBehaviour:
   Sensor: {fileID: 3376980941601391386}
   Name: Reactor
   Description: Heart of starship
-  RepairPrice: 15
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   Sensor: {fileID: 3119284288153001884}
   Name: Laboratory
   Description: Research center
-  RepairPrice: 15
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -143,9 +143,9 @@ MonoBehaviour:
   Sensor: {fileID: 895162653784143968}
   Name: Shields
   Description: Delays enemies waves
-  RepairPrice: 15
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
-  Unlocked: 1
+  Unlocked: 0
   Health: {fileID: 0}
   SpawnRateBuff: 5
 --- !u!114 &431249649897925360
@@ -168,9 +168,9 @@ MonoBehaviour:
   Sensor: {fileID: 1715745961300829615}
   Name: Warehouse
   Description: Spawns useful things
-  RepairPrice: 15
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
-  Unlocked: 1
+  Unlocked: 0
   Health: {fileID: 0}
   DropPoint: {fileID: 9123259226248813159}
   DropItems:
@@ -196,9 +196,9 @@ MonoBehaviour:
   Sensor: {fileID: 1190590568802647540}
   Name: Weapon
   Description: Buffs your damage
-  RepairPrice: 15
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
-  Unlocked: 1
+  Unlocked: 0
   Health: {fileID: 0}
   DropPoint: {fileID: 2004766315035925221}
   DropItems:
@@ -287,7 +287,7 @@ MonoBehaviour:
   Sensor: {fileID: 4761012259552182807}
   Name: Medical
   Description: Restores health
-  RepairPrice: 15
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -354,7 +354,6 @@ MonoBehaviour:
   - {fileID: 4505965521278953720}
   - {fileID: 3498461108338558623}
   - {fileID: 757247902922295223}
-  InteractionRadius: 3
 --- !u!114 &8893774311380940612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -375,7 +374,7 @@ MonoBehaviour:
   Sensor: {fileID: 6585178702038995489}
   Name: Oxygen
   Description: Provides oxygen
-  RepairPrice: 15
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -852,6 +851,10 @@ PrefabInstance:
       value: Security
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
+      propertyPath: Unlocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: Description
       value: Spawns defenders
       objectReference: {fileID: 0}
@@ -874,6 +877,10 @@ PrefabInstance:
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: RepairedAtStart
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: Route.Array.data[0].Module

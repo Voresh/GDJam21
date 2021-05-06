@@ -4,7 +4,6 @@ using UnityEngine.AI;
 
 public class Door : MonoBehaviour, IRepairable {
     public Renderer Renderer;
-    public Collider Collider;
     public NavMeshObstacle NavMeshObstacle;
     public List<Module> ModulesToUnlock;
     public List<GameObject> RespawnesToUnlock;
@@ -17,7 +16,6 @@ public class Door : MonoBehaviour, IRepairable {
     
     public void Repair() {
         Renderer.enabled = false;
-        Collider.enabled = false;
         NavMeshObstacle.enabled = false;
         Repaired = true;
         foreach (var module in ModulesToUnlock) {

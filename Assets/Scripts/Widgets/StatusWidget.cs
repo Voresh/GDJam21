@@ -34,6 +34,6 @@ public class StatusWidget : MonoBehaviour {
     }
 
     private void RefreshModuleStatus(ModuleStatusWidget instance, Module module) {
-        instance.Text.text = $"{module.Name} ({(module.Repaired ? "<color=green>Repaired</color>" : "<color=red>Destroyed</color>")})";
+        instance.Text.text = $"{module.Name} ({(module.Unlocked ? (module.Repaired ? "<color=green>Repaired</color>" : "<color=red>Destroyed</color>") : "<color=red>Locked</color>")})";
     }
 }
