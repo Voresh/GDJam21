@@ -14,7 +14,8 @@ public class AnnouncementController : JamBase<AnnouncementController> {
     private string _CurrentText;
     private float _LastAnnouncementTime;
 
-    private void Start() {
+    protected override void Awake() {
+        base.Awake();
         Text.text = string.Empty;
         Group.alpha = 0f;
     }

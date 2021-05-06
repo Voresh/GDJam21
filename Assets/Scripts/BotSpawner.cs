@@ -10,12 +10,13 @@ public class BotSpawner : JamBase<BotSpawner> {
     public float StartSpawnRate = 10f;
     public List<Collider> SpawnPoints;
     public int CurrentWave = -1;
+    public float FirstWaveDelay = 10;
     public int BotsCount => Fibonacci(CurrentWave + 1) * 3;
 
     public bool FirstWaveSpawned => CurrentWave != -1;
     public List<Bot> CurrentWaveBots = new List<Bot>();
     public float SpawnRateBuff;
-    public float SpawnRate => StartSpawnRate + SpawnRateBuff /*+ Math.Max(0, CurrentWave * 5)*/;
+    public float SpawnRate => FirstWave ? FirstWaveDelay : StartSpawnRate + SpawnRateBuff /*+ Math.Max(0, CurrentWave * 5)*/;
     public float NextWaveTime => SpawnRate - (Time.time - _LastWaveCompleteTime);
     public event Action<int> onWaveSpawnStarted = _ => { };
     public event Action<Bot> onBotSpawned = _ => { };
@@ -25,6 +26,8 @@ public class BotSpawner : JamBase<BotSpawner> {
     private float _LastWaveCompleteTime;
     public bool WaveInProgress { get; private set; }
 
+    public bool FirstWave = true;
+    
     private void Start() {
         _LastWaveCompleteTime = Time.time;
     }
@@ -52,6 +55,7 @@ public class BotSpawner : JamBase<BotSpawner> {
         var bounds = SpawnPoints[UnityEngine.Random.Range(0, SpawnPoints.Count)].bounds;
         CurrentWaveBots.Clear();
         var botsCount = BotsCount;
+        FirstWave = false;
         Debug.Log(botsCount);
         for (var i = 0; i < botsCount; i++) {
             var position = new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x), UnityEngine.Random.Range(bounds.min.y, bounds.max.y), UnityEngine.Random.Range(bounds.min.z, bounds.max.z));
