@@ -425,6 +425,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
       value: WeaponModule
@@ -566,6 +570,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
       value: WarehouseModule
@@ -698,6 +706,10 @@ PrefabInstance:
     - target: {fileID: 3895909479530253928, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -920,6 +932,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3559268651001177907, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3559268651001177909, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_Name
       value: SecurityModule
@@ -1047,6 +1063,10 @@ PrefabInstance:
     - target: {fileID: 3895909479530253928, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -1181,6 +1201,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
       value: ReactorModule
@@ -1314,6 +1338,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
+      objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
       value: OxygenModule
@@ -1446,6 +1474,10 @@ PrefabInstance:
     - target: {fileID: 3895909479530253928, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
+      propertyPath: StartMaxHealth
+      value: 2000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
