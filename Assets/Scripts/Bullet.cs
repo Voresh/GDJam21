@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour {
 
     private void Update() {
         transform.position += transform.forward * Speed * Time.deltaTime;
-        if (Physics.Raycast(transform.position, transform.forward, out var hit, 0.25f, Layers, QueryTriggerInteraction.Ignore)) {
+        if (Physics.Raycast(transform.position, transform.forward, out var hit, 0.25f, Layers, QueryTriggerInteraction.Collide)) {
             var target = hit.transform.gameObject;
             if (Owner == target.gameObject)
                 return;

@@ -26,13 +26,16 @@ public class LaboratoryModule : Module {
         if (DebugMode)
             PlayerPrefs.DeleteAll();
         LoadProgress();
+        BotSpawner.Instance.onBotSpawned += OnBotSpawned;
+    }
+
+    protected override void UpdateEffects(bool active) {
         foreach (var progressKVP in BranchProgress) {
             var branchName = progressKVP.Key;
             var branch = Branches.First(_ => _.Name == branchName);
             var buff = branch.Buffs[progressKVP.Value];
-            UpdateBuff(buff);
+            UpdateBuff(buff, active);
         }
-        BotSpawner.Instance.onBotSpawned += OnBotSpawned;
     }
 
     private void LoadProgress() {
@@ -59,7 +62,7 @@ public class LaboratoryModule : Module {
         var nextBuff = branch.Buffs[nextProgress];
         Points -= nextBuff.Price;
         BranchProgress[branchName] = nextProgress;
-        UpdateBuff(nextBuff);
+        UpdateBuff(nextBuff, Repaired);
         onUpgradesUpdated.Invoke();
         SaveProgress();
     }
@@ -106,16 +109,16 @@ public class LaboratoryModule : Module {
         SaveProgress();
     }
 
-    private void UpdateBuff(LaboratoryBuff buff) {
+    private void UpdateBuff(LaboratoryBuff buff, bool enabled) {
         switch (buff.Type) {
             case LaboratoryBuffType.Health:
-                PlayerController.Instance.Health.GlobalHealthBuff = buff.Amount;
+                PlayerController.Instance.Health.GlobalHealthBuff = enabled ? buff.Amount : 0f;
                 break;
             case LaboratoryBuffType.Damage: 
-                PlayerController.Instance.BulletSpawner.GlobalDamageBuff = buff.Amount;
+                PlayerController.Instance.BulletSpawner.GlobalDamageBuff = enabled ? buff.Amount : 0f;
                 break;
             case LaboratoryBuffType.Repair:
-                RepairController.Instance.GlobalRepairBuff = buff.Amount;
+                RepairController.Instance.GlobalRepairBuff = enabled ? buff.Amount : 0f;
                 break;
             default: 
                 throw new ArgumentOutOfRangeException();
