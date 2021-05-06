@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 using System.Collections.Generic;
@@ -34,7 +35,13 @@ public class Bot : MonoBehaviour {
             Animator.SetBool("Died", true);
             GetComponent<Collider>().enabled = false;
             NavMeshAgent.enabled = false;
+            StartCoroutine(DisableCorpse());
         }
+    }
+
+    private IEnumerator DisableCorpse() {
+        yield return new WaitForSeconds(5f);
+        gameObject.SetActive(false);
     }
 
     private void Update() {

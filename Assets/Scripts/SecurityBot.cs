@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -39,7 +40,13 @@ public class SecurityBot : MonoBehaviour {
             Animator.SetBool("Died", true);
             GetComponent<Collider>().enabled = false;
             NavMeshAgent.enabled = false;
+            StartCoroutine(DisableCorpse());
         }
+    }
+    
+    private IEnumerator DisableCorpse() {
+        yield return new WaitForSeconds(5f);
+        gameObject.SetActive(false);
     }
 
     private void Update() {
