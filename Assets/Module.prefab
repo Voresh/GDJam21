@@ -69,7 +69,7 @@ GameObject:
   - component: {fileID: 3895909479530253930}
   - component: {fileID: 3895909479530253931}
   - component: {fileID: 3895909479530253935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Module
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,8 +144,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.6859109, z: 1}
-  m_Center: {x: 0, y: 0.84295547, z: 0}
+  m_Size: {x: 1, y: 2.7062175, z: 1}
+  m_Center: {x: 0, y: 1.3531088, z: 0}
 --- !u!1001 &1325817035341583429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -295,7 +295,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 1071384b58aeb1f438248812aad7a7e8, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64000012461069462, guid: c62700998e152c04caf87b3620ca2fee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c62700998e152c04caf87b3620ca2fee, type: 3}
 --- !u!1 &5543671293120128574 stripped
 GameObject:
@@ -374,7 +375,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 64000012461069462, guid: c62700998e152c04caf87b3620ca2fee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c62700998e152c04caf87b3620ca2fee, type: 3}
 --- !u!1 &6109536896267646592 stripped
 GameObject:
