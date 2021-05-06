@@ -17,7 +17,7 @@ public class BulletSpawner : MonoBehaviour {
             return;
         var bulletInstance = Instantiate(BulletPrefab);
         bulletInstance.transform.position = ShootPosition.position;
-        bulletInstance.transform.forward = ShootTargetPosition - transform.position;
+        bulletInstance.transform.forward = ShootTargetPosition - ShootPosition.position;
         bulletInstance.Owner = Shooter.gameObject;
         bulletInstance.GlobalDamageBuff = GlobalDamageBuff;
         _LastShotTime = Time.time;
