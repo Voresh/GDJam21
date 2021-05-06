@@ -183,6 +183,7 @@ MonoBehaviour:
   DropPoint: {fileID: 9123259226248813159}
   DropItems:
   - {fileID: 4487989998304773478, guid: 8db0da073c2a6164d852f1e693e59cd4, type: 3}
+  - {fileID: 8265850033491596889, guid: fdb4387307c148e4ea95c11c0f511d52, type: 3}
   Aidkit: {fileID: 0}
 --- !u!114 &757247902922295223
 MonoBehaviour:
