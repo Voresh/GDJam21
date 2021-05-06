@@ -34,10 +34,17 @@ public class MedicalModule : Module {
         PlayerController.Instance.NavMeshAgent.enabled = true;
         
         PlayerController.Instance.Health.RestoreHealth();
-
+        StartCoroutine(RespawnInvulnerability());
+        
         yield return new WaitForSeconds(1f);
         
         PlayerController.Instance.enabled = true;
+    }
+
+    private IEnumerator RespawnInvulnerability() {
+        PlayerController.Instance.Health.Invulnerable = true;
+        yield return new WaitForSeconds(5f);
+        PlayerController.Instance.Health.Invulnerable = false;
     }
 
     protected override void UpdateEffects(bool active) {

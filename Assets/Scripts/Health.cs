@@ -10,10 +10,12 @@ public class Health : MonoBehaviour {
     public float GlobalHealthBuff;
     private HealthBar _HealthBar;
     public bool Dead { get; private set; } = true;
-    
+    public bool Invulnerable;
     public int HealthCurrent {
         get => _HealthCurrent;
         set {
+            if (value < _HealthCurrent && Invulnerable)
+                return;
             var lastHealth = _HealthCurrent;
             _HealthCurrent = Mathf.Clamp(value, 0, HealthMax);
             if (!Dead && _HealthCurrent == 0) {
