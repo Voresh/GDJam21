@@ -17,10 +17,12 @@ MonoBehaviour:
   DestroyedView: {fileID: 8331304850010770790}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
+  HealRate: 1
+  HealAmount: 5
   Sensor: {fileID: 3376980941601391386}
   Name: Reactor
   Description: Heart of starship
-  InitialRepairPrice: 250
+  InitialRepairPrice: 100
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -41,6 +43,8 @@ MonoBehaviour:
   DestroyedView: {fileID: 8505649672845185504}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
+  HealRate: 1
+  HealAmount: 5
   Sensor: {fileID: 3119284288153001884}
   Name: Laboratory
   Description: Research center
@@ -140,10 +144,12 @@ MonoBehaviour:
   DestroyedView: {fileID: 5850051019713820188}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
+  HealRate: 1
+  HealAmount: 5
   Sensor: {fileID: 895162653784143968}
   Name: Shields
   Description: Delays enemies waves
-  InitialRepairPrice: 100
+  InitialRepairPrice: 50
   PriceHeightOffset: 3
   Unlocked: 0
   Health: {fileID: 0}
@@ -165,10 +171,12 @@ MonoBehaviour:
   DestroyedView: {fileID: 5371741040714607571}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
+  HealRate: 1
+  HealAmount: 5
   Sensor: {fileID: 1715745961300829615}
   Name: Warehouse
   Description: Spawns useful things
-  InitialRepairPrice: 100
+  InitialRepairPrice: 25
   PriceHeightOffset: 3
   Unlocked: 0
   Health: {fileID: 0}
@@ -193,10 +201,12 @@ MonoBehaviour:
   DestroyedView: {fileID: 5604197611279135624}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
+  HealRate: 1
+  HealAmount: 5
   Sensor: {fileID: 1190590568802647540}
   Name: Weapon
   Description: Buffs your damage
-  InitialRepairPrice: 100
+  InitialRepairPrice: 25
   PriceHeightOffset: 3
   Unlocked: 0
   Health: {fileID: 0}
@@ -284,6 +294,8 @@ MonoBehaviour:
   DestroyedView: {fileID: 2256669225825897579}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
+  HealRate: 1
+  HealAmount: 5
   Sensor: {fileID: 4761012259552182807}
   Name: Medical
   Description: Restores health
@@ -371,10 +383,12 @@ MonoBehaviour:
   DestroyedView: {fileID: 441509973454445661}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
+  HealRate: 1
+  HealAmount: 5
   Sensor: {fileID: 6585178702038995489}
   Name: Oxygen
   Description: Provides oxygen
-  InitialRepairPrice: 50
+  InitialRepairPrice: 15
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -433,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -578,7 +592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -715,7 +729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -880,7 +894,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: InitialRepairPrice
-      value: 100
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: Route.Array.data[0].Module
@@ -1016,7 +1030,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3559268651001177907, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3559268651001177909, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: m_Name
@@ -1188,7 +1202,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -1325,7 +1339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -1462,7 +1476,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
@@ -1599,7 +1613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253930, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: StartMaxHealth
-      value: 2000
+      value: 4000
       objectReference: {fileID: 0}
     - target: {fileID: 3895909479530253932, guid: 1cfb8439b94ca024bbdaa8a5102d6454, type: 3}
       propertyPath: m_Name
