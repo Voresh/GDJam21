@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WShootRate: 1.5
-  wBulletPrefab: {fileID: 5337075668158279481, guid: 272deea7ff4fdca4fb5b03817321230b, type: 3}
+  wBulletPrefab: {fileID: -2196528666000328148, guid: 272deea7ff4fdca4fb5b03817321230b, type: 3}
   ModelWeapon: {fileID: 2679532251053557910, guid: 62cb54a74c1f2fc4aa8b64873a7eea86, type: 3}
 --- !u!114 &8803562026733841940
 MonoBehaviour:
