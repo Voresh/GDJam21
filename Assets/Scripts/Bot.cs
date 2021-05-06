@@ -19,7 +19,7 @@ public class Bot : MonoBehaviour {
     public GameObject MoveToTarget;
     public Health Health;
     public LayerMask LevelLayer;
-    
+    public float RotationDamping;
     private void Start() {
         TargetModules = ModulesController.Instance.Modules.ToList();
         TargetPlayer = PlayerController.Instance.gameObject;
@@ -67,7 +67,8 @@ public class Bot : MonoBehaviour {
             if (direction.magnitude < DetectionRadius) {
                 NavMeshAgent.speed = Speed;
                 NavMeshAgent.Move(direction.normalized * Speed * Time.deltaTime);
-                transform.forward = direction;
+                RotationDamping = 20f;
+                transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime * RotationDamping);
                 Animator.SetFloat(_Speed, Speed);
                 _Debug = "movint to target";
                 return;
@@ -105,7 +106,9 @@ public class Bot : MonoBehaviour {
     }
 
     private void Attack(Transform target) {
-        transform.LookAt(target);
+        var direction = target.transform.position - transform.position;
+        transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime * RotationDamping);
+        //transform.LookAt(target);
         BulletSpawner.ShootTargetPosition = target.position;
         BulletSpawner.enabled = true;
         NavMeshAgent.ResetPath();
