@@ -58,7 +58,7 @@ Material:
     m_Floats:
     - _Cull: 2
     m_Colors:
-    - Color_11db43765c694fd3a5c8beae7f00370d: {r: 38.93715, g: 0.8154376, b: 0, a: 1}
+    - Color_11db43765c694fd3a5c8beae7f00370d: {r: 0, g: 48.497543, b: 51.984146, a: 1}
     - Vector2_772ccc350ba2491b88449d6a2da46c8d: {r: 0, g: 0.5, b: 0, a: 0}
     - Vector4_38310bb753a443139dd4c83f3e1d6a4a: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 38.937145, g: 0.6115782, b: 0, a: 1}
