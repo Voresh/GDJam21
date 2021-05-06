@@ -305,7 +305,7 @@ MonoBehaviour:
   Unlocked: 1
   Health: {fileID: 0}
   HealRate: 1
-  HealAmount: 5
+  HealAmount: 3
   SpawnPoint: {fileID: 1833459066267640782}
 --- !u!1 &7327165386026106489
 GameObject:
@@ -394,7 +394,7 @@ MonoBehaviour:
   Unlocked: 1
   Health: {fileID: 0}
   DamageRate: 1
-  DamageAmount: 7
+  DamageAmount: 4
 --- !u!1001 &83615263497786806
 PrefabInstance:
   m_ObjectHideFlags: 0
