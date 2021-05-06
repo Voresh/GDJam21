@@ -48,10 +48,10 @@ MonoBehaviour:
   Layers:
     serializedVersion: 2
     m_Bits: 4294967295
-  Speed: 20
+  Speed: 25
   Lifetime: 10
   Owner: {fileID: 0}
-  StartDamage: 20
+  StartDamage: 35
 --- !u!1 &7286107078317141164
 GameObject:
   m_ObjectHideFlags: 0

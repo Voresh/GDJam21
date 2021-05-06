@@ -19,6 +19,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   AttackRadius: 5
+  Health: {fileID: 0}
   StoppingDistance: 0.5
   TargetPointIndex: 0
   NavMeshAgent: {fileID: 0}
@@ -33,8 +34,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: ShootRate
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: BulletPrefab
+      value: 
+      objectReference: {fileID: 2401218503803063804, guid: dbe09ec2163b1704f9412d3923243083, type: 3}
     - target: {fileID: 157554211902372129, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -241,7 +246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7327735730825696552, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: StartMaxHealth
-      value: 40
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 7335753689549055568, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Layer

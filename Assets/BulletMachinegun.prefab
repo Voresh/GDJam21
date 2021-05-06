@@ -48,7 +48,7 @@ MonoBehaviour:
   Layers:
     serializedVersion: 2
     m_Bits: 4294967295
-  Speed: 10
+  Speed: 40
   Lifetime: 10
   Owner: {fileID: 0}
   StartDamage: 5
