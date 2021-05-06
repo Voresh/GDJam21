@@ -13,7 +13,8 @@ public class Module : MonoBehaviour {
     public string Description;
     public int RepairPrice;
     public float PriceHeightOffset = 2f;
-
+    public bool Unlocked = true;
+    
     public Health Health;
     private PriceBar _PriceBar;
     private HealthBar _HealthBar;

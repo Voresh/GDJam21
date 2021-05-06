@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.AI;
@@ -8,9 +9,11 @@ public class SecurityBot : MonoBehaviour {
     public LayerMask LevelLayer;
     public float AttackRadius = 5f;
     public Health Health;
-    public List<Transform> Route { get; set; }
+    public List<SecurityRoute> Route { get; set; }
+    public List<SecurityRoute> VisitedRoutePoints { get; set; } = new List<SecurityRoute>();
     public float StoppingDistance;
-    public int TargetPointIndex;
+    [NonSerialized]
+    public SecurityRoute SecurityRoute;
     public NavMeshAgent NavMeshAgent;
     public Animator Animator;
     public BulletSpawner BulletSpawner;
@@ -24,9 +27,10 @@ public class SecurityBot : MonoBehaviour {
         Health = GetComponent<Health>();
         Health.RestoreHealth();
         NavMeshAgent.autoBraking = false;
-        NavMeshAgent.SetDestination(Route[TargetPointIndex].position);
         Animator.SetFloat("Speed", 1f);
         GetComponent<BulletSpawner>().enabled = false;
+        SecurityRoute = null;
+        UpdateDestination();
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
     }
     
@@ -63,17 +67,37 @@ public class SecurityBot : MonoBehaviour {
         
         if (_WasShooting) {
             BulletSpawner.enabled = false;
-            NavMeshAgent.SetDestination(Route[TargetPointIndex].position);
+            UpdateDestination();
             Animator.SetFloat("Speed", 1f);
             _WasShooting = false;
         }
-        if ((Route[TargetPointIndex].position - transform.position).sqrMagnitude > StoppingDistance * StoppingDistance)
-            return;
-        TargetPointIndex++;
-        if (TargetPointIndex == Route.Count)
-            TargetPointIndex = 0;
-        NavMeshAgent.SetDestination(Route[TargetPointIndex].position);
-        Animator.SetFloat("Speed", 1f);
+        UpdateDestination();
+    }
+
+    private void UpdateDestination() {
+        if (SecurityRoute == null) {
+            SecurityRoute = Route
+                .OrderBy(_ => (_.Transform.position - transform.position).sqrMagnitude)
+                .FirstOrDefault(AcceptableRoute);
+            if (SecurityRoute == null) {
+                VisitedRoutePoints.Clear();
+                SecurityRoute = Route
+                    .OrderBy(_ => (_.Transform.position - transform.position).sqrMagnitude)
+                    .First(AcceptableRoute);
+            }
+        }
+        if ((SecurityRoute.Transform.position - transform.position).sqrMagnitude > StoppingDistance * StoppingDistance) {
+            NavMeshAgent.SetDestination(SecurityRoute.Transform.position);
+        }
+        else {
+            VisitedRoutePoints.Add(SecurityRoute);
+            SecurityRoute = null;
+            UpdateDestination();
+        }
+    }
+
+    private bool AcceptableRoute(SecurityRoute route) {
+        return route.Module.Unlocked && !VisitedRoutePoints.Contains(route);
     }
 
     private bool AttackAvailable(Transform _) {

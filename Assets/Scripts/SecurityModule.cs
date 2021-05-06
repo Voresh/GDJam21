@@ -1,11 +1,18 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class SecurityRoute {
+    public Transform Transform;
+    public Module Module;
+}
 
 public class SecurityModule : Module {
     private Coroutine _SpawnCoroutine;
     public SecurityBot SecurityBotPrefab;
-    public List<Transform> Route;
+    public List<SecurityRoute> Route;
     public Transform SpawnPoint;
     public float SpawnRate = 10f;
 
