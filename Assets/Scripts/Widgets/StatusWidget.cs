@@ -23,7 +23,7 @@ public class StatusWidget : MonoBehaviour {
 
     private void Update() {
         foreach (var (widget, module) in _Widgets) {
-            widget.Arrow.gameObject.SetActive(!module.Repaired);
+            //widget.Arrow.gameObject.SetActive(!module.Repaired);
             var targetRotation = WaveArrowWidget.GetRouteDirection(module.transform.position);
             widget.Arrow.rotation = Quaternion.Slerp(widget.Arrow.rotation, targetRotation, 10f * Time.deltaTime);
             if (module.Repaired)
