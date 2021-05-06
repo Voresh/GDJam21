@@ -724,6 +724,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5518897277616458853, guid: fd2ecffb2f99c8d44ae47b0a5acbc51f, type: 3}
+      propertyPath: m_FontData.m_MaxSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518897277616458853, guid: fd2ecffb2f99c8d44ae47b0a5acbc51f, type: 3}
+      propertyPath: m_FontData.m_MinSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5518897277616458853, guid: fd2ecffb2f99c8d44ae47b0a5acbc51f, type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5585658959401766159, guid: fd2ecffb2f99c8d44ae47b0a5acbc51f, type: 3}
+      propertyPath: AnnouncementDuration
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7290439531759687300, guid: fd2ecffb2f99c8d44ae47b0a5acbc51f, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -852,7 +868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5038510270244111682, guid: 27c6da7241c0c9a4185746ee032af1c7, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -128
+      value: -200
       objectReference: {fileID: 0}
     - target: {fileID: 5038510270244111682, guid: 27c6da7241c0c9a4185746ee032af1c7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
