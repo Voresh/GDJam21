@@ -10,6 +10,7 @@ public class Module : MonoBehaviour {
     public HealthBar HealthBarPrefab;
     public Sensor Sensor;
     public string Name;
+    public string Description;
     public int RepairPrice;
     public float PriceHeightOffset = 2f;
 

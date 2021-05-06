@@ -11,7 +11,7 @@ public class GameController : JamBase<GameController> {
             module.Sensor.onTriggerEnter += collider => {
                 if (collider.gameObject != PlayerController.Instance.gameObject)
                     return;
-                AnnouncementController.Instance.Schedule($"{module.Name} module");
+                AnnouncementController.Instance.Schedule($"{module.Name} module", $"{module.Description}");
             };
         }
         yield return null; //hack to skip modules initial state announcements
