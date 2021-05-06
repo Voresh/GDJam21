@@ -16,8 +16,8 @@ public class Bullet : MonoBehaviour {
     }
 
     private void Update() {
-        transform.position += transform.forward * Speed * Time.deltaTime;
-        if (Physics.Raycast(transform.position, transform.forward, out var hit, 0.25f, Layers, QueryTriggerInteraction.Collide)) {
+        var resultSpeed = Speed * Time.deltaTime;
+        if (Physics.Raycast(transform.position, transform.forward, out var hit, resultSpeed * 1.25f, Layers, QueryTriggerInteraction.Collide)) {
             var target = hit.transform.gameObject;
             if (Owner == target.gameObject)
                 return;
@@ -33,6 +33,7 @@ public class Bullet : MonoBehaviour {
                 health.HealthCurrent -= Damage;
             Destroy(gameObject);
         }
+        transform.position += transform.forward * resultSpeed;
         if (Time.time - _SpawnTime > Lifetime)
             Destroy(gameObject);
     }
