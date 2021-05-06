@@ -22,6 +22,8 @@ MonoBehaviour:
   DetectionRadius: 10
   AttackRadius: 6
   TargetModules: []
+  TargetPlayer: {fileID: 0}
+  MoveToTarget: {fileID: 0}
   Health: {fileID: 4102634361452438805}
   LevelLayer:
     serializedVersion: 2
@@ -35,7 +37,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: ShootRate
-      value: 0.3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Enabled
@@ -44,7 +46,7 @@ PrefabInstance:
     - target: {fileID: -2792957558222914717, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: BulletPrefab
       value: 
-      objectReference: {fileID: 1148742588680458375, guid: be0c7f7b66199ed488973895983082c4, type: 3}
+      objectReference: {fileID: 2401218503803063804, guid: dbe09ec2163b1704f9412d3923243083, type: 3}
     - target: {fileID: 6984859426521596460, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Name
       value: Bot
