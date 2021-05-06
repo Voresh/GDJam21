@@ -19,9 +19,24 @@ public class MedicalModule : Module {
             Debug.Log("medical module not repaired - not restoring player");
             return;
         }
+        StartCoroutine(Respawn());
+    }
+
+    private IEnumerator Respawn() {
+        PlayerController.Instance.enabled = false;
+
+        DeathWidgetController.Instance.Active = true;
+        yield return new WaitForSeconds(2f);
+        DeathWidgetController.Instance.Active = false;
+        
         PlayerController.Instance.NavMeshAgent.enabled = false;
         PlayerController.Instance.transform.position = SpawnPoint.position;
         PlayerController.Instance.NavMeshAgent.enabled = true;
+        
+        yield return new WaitForSeconds(1f);
+        
+        PlayerController.Instance.enabled = true;
+        
         PlayerController.Instance.Health.RestoreHealth();
     }
 
@@ -38,7 +53,8 @@ public class MedicalModule : Module {
     private IEnumerator HealPlayerCoroutine() {
         while (true) {
             yield return new WaitForSeconds(HealRate);
-            PlayerController.Instance.Health.HealthCurrent += HealAmount;
+            if (!PlayerController.Instance.Health.Dead)
+                PlayerController.Instance.Health.HealthCurrent += HealAmount;
         }
     }
 }

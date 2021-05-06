@@ -31,8 +31,8 @@ public class GameController : JamBase<GameController> {
     }
 
     private void OnDeadStatusUpdated(bool dead) {
-        if (!dead)
-            AnnouncementController.Instance.Schedule("Player respawned!");
+        //if (!dead)
+        //    AnnouncementController.Instance.Schedule("Player respawned!");
     }
 
     private void OnWaveSpawnStarted(int wave) {
