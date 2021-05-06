@@ -100,10 +100,10 @@ public class SecurityBot : MonoBehaviour {
         return route.Module.Unlocked && !VisitedRoutePoints.Contains(route);
     }
 
-    private bool AttackAvailable(Transform _) {
-        var position = transform.position + Vector3.up;
-        var direction = Vector3.ProjectOnPlane((_.position - transform.position).normalized, Vector3.up);
-        var distance = Mathf.Min((_.position - transform.position).magnitude, AttackRadius);
+    private bool AttackAvailable(Transform target) {
+        var position = BulletSpawner.ShootPosition.position;
+        var direction = Vector3.ProjectOnPlane((target.position - position).normalized, Vector3.up);
+        var distance = Mathf.Min((target.position - position).magnitude, AttackRadius);
         Debug.DrawRay(position, direction * distance, Color.red);
         return !Physics.Raycast(position, direction, distance, LevelLayer);
     }
