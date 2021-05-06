@@ -22,6 +22,7 @@ MonoBehaviour:
   Sensor: {fileID: 3376980941601391386}
   Name: Reactor
   Description: Heart of starship
+  Penalty: Respawn unavailable!
   InitialRepairPrice: 100
   PriceHeightOffset: 3
   Unlocked: 1
@@ -48,6 +49,7 @@ MonoBehaviour:
   Sensor: {fileID: 3119284288153001884}
   Name: Laboratory
   Description: Research center
+  Penalty: Upgrades inactive!
   InitialRepairPrice: 50
   PriceHeightOffset: 3
   Unlocked: 1
@@ -149,6 +151,7 @@ MonoBehaviour:
   Sensor: {fileID: 895162653784143968}
   Name: Shields
   Description: Delays enemies waves
+  Penalty: 
   InitialRepairPrice: 50
   PriceHeightOffset: 3
   Unlocked: 0
@@ -176,6 +179,7 @@ MonoBehaviour:
   Sensor: {fileID: 1715745961300829615}
   Name: Warehouse
   Description: Spawns useful things
+  Penalty: 
   InitialRepairPrice: 25
   PriceHeightOffset: 3
   Unlocked: 0
@@ -207,6 +211,7 @@ MonoBehaviour:
   Sensor: {fileID: 1190590568802647540}
   Name: Weapon
   Description: Spawns weapons
+  Penalty: 
   InitialRepairPrice: 25
   PriceHeightOffset: 3
   Unlocked: 0
@@ -300,6 +305,7 @@ MonoBehaviour:
   Sensor: {fileID: 4761012259552182807}
   Name: Medical
   Description: Restores health
+  Penalty: Health not restoring!
   InitialRepairPrice: 50
   PriceHeightOffset: 3
   Unlocked: 1
@@ -389,6 +395,7 @@ MonoBehaviour:
   Sensor: {fileID: 6585178702038995489}
   Name: Oxygen
   Description: Provides oxygen
+  Penalty: You are loosing hp!
   InitialRepairPrice: 15
   PriceHeightOffset: 3
   Unlocked: 1

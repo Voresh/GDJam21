@@ -14,6 +14,7 @@ public class Module : MonoBehaviour, IRepairable {
     public Sensor Sensor;
     public string Name;
     public string Description;
+    public string Penalty;
     [FormerlySerializedAs("RepairPrice")]
     public int InitialRepairPrice;
     public float PriceHeightOffset = 2f;
