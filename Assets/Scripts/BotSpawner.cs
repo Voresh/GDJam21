@@ -55,19 +55,29 @@ public class BotSpawner : JamBase<BotSpawner> {
         var spawnPoints = SpawnPoints
             .Where(_ => _.gameObject.activeSelf)
             .ToList();
-        var bounds = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)].bounds;
+        var botsOnPoints = spawnPoints.ToDictionary(_ => _, _ => 0);
+        const int desiredMaxOnPoint = 5;
+        var spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
         CurrentWaveBots.Clear();
         var botsCount = BotsCount;
         FirstWave = false;
         Debug.Log(botsCount);
         for (var i = 0; i < botsCount; i++) {
-            var position = new Vector3(UnityEngine.Random.Range(bounds.min.x, bounds.max.x), UnityEngine.Random.Range(bounds.min.y, bounds.max.y), UnityEngine.Random.Range(bounds.min.z, bounds.max.z));
+            if (botsOnPoints[spawnPoint] == desiredMaxOnPoint) {
+                spawnPoints = spawnPoints
+                    .Where(_ => botsOnPoints[_] < desiredMaxOnPoint)
+                    .ToList();
+                if (spawnPoints.Count != 0)
+                    spawnPoint = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)];
+            }
+            var position = new Vector3(UnityEngine.Random.Range(spawnPoint.bounds.min.x, spawnPoint.bounds.max.x), UnityEngine.Random.Range(spawnPoint.bounds.min.y, spawnPoint.bounds.max.y), UnityEngine.Random.Range(spawnPoint.bounds.min.z, spawnPoint.bounds.max.z));
             var botInstance = Instantiate(BotPrefab, position, Quaternion.identity);
             var botHealth = botInstance.GetComponent<Health>();
             CurrentWaveBots.Add(botInstance);
+            botsOnPoints[spawnPoint] = botsOnPoints[spawnPoint] + 1;
             onBotSpawned.Invoke(botInstance);
         }
-        LastSpawnPoint = bounds.center;
+        LastSpawnPoint = spawnPoint.bounds.center;
         WaveInProgress = true;
         onWaveStatusUpdated.Invoke(WaveInProgress);
         onWaveSpawnStarted.Invoke(CurrentWave);
