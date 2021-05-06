@@ -13,6 +13,7 @@ public class Bot : MonoBehaviour {
     public float Speed = 2.5f;
     public float DetectionRadius = 7f;
     public float AttackRadius = 4f;
+    public float ModuleAttackRadius = 3f;
     private static readonly int _Speed = Animator.StringToHash("Speed");
     public List<Module> TargetModules;
     public GameObject TargetPlayer;
@@ -56,7 +57,7 @@ public class Bot : MonoBehaviour {
             .Where(_ => _.GetComponent<Module>().Repaired && AttackAvailable(_.transform))
             .OrderBy(_ => Vector3.Distance(_.transform.position, transform.position))
             .FirstOrDefault();
-        if (repairedModule != null && Vector3.Distance(repairedModule.transform.position, transform.position) < AttackRadius) {
+        if (repairedModule != null && Vector3.Distance(repairedModule.transform.position, transform.position) < ModuleAttackRadius) {
             Attack(repairedModule.transform);
             _Debug = "atakin module";
             return;
@@ -67,7 +68,7 @@ public class Bot : MonoBehaviour {
             if (direction.magnitude < DetectionRadius) {
                 NavMeshAgent.speed = Speed;
                 NavMeshAgent.Move(direction.normalized * Speed * Time.deltaTime);
-                RotationDamping = 20f;
+                NavMeshAgent.updateRotation = false;
                 transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime * RotationDamping);
                 Animator.SetFloat(_Speed, Speed);
                 _Debug = "movint to target";
@@ -85,6 +86,9 @@ public class Bot : MonoBehaviour {
 
         NavMeshAgent.speed = Speed;
         NavMeshAgent.SetDestination(MoveToTarget.transform.position);
+        NavMeshAgent.updateRotation = true;
+        //var rotationDirection = MoveToTarget.transform.position - transform.position;
+        //transform.forward = Vector3.Lerp(transform.forward, rotationDirection, Time.deltaTime * RotationDamping);
         Animator.SetFloat(_Speed, Speed);
         _Debug = "movint to module";
     }
@@ -101,13 +105,16 @@ public class Bot : MonoBehaviour {
         var position = BulletSpawner.ShootPosition.position;
         var direction = Vector3.ProjectOnPlane((target.position - position).normalized, Vector3.up);
         var distance = Mathf.Min((target.position - position).magnitude, AttackRadius);
-        Debug.DrawRay(position, direction * distance, Color.red);
-        return !Physics.Raycast(position, direction, distance, LevelLayer);
+        var result = !Physics.Raycast(position, direction, distance, LevelLayer);
+        //Debug.DrawRay(position, direction * distance,result ?  Color.green : Color.red);
+        return result;
     }
 
     private void Attack(Transform target) {
         var direction = target.transform.position - transform.position;
+        NavMeshAgent.updateRotation = false;
         transform.forward = Vector3.Lerp(transform.forward, direction, Time.deltaTime * RotationDamping);
+        Debug.DrawRay(transform.position, direction.normalized,Color.green);
         //transform.LookAt(target);
         BulletSpawner.ShootTargetPosition = target.position;
         BulletSpawner.enabled = true;

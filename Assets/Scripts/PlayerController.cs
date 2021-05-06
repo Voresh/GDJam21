@@ -57,7 +57,7 @@ public class PlayerController : JamBase<PlayerController> {
         var position = BulletSpawner.ShootPosition.position;
         var direction = Vector3.ProjectOnPlane((target.position - position).normalized, Vector3.up);
         var distance = Mathf.Min((target.position - position).magnitude, AttackRadius);
-        Debug.DrawRay(position, direction * distance, Color.red);
+        //Debug.DrawRay(position, direction * distance, Color.red);
         return !Physics.Raycast(position, direction, distance, LevelLayer);
     }
 

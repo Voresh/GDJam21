@@ -30,6 +30,8 @@ public class Bullet : MonoBehaviour {
     }
 
     protected virtual void DamageTarget(GameObject target, float multiplier) {
+        //if (Owner == PlayerController.Instance.gameObject)
+        //    Debug.LogError(target.name);
         var health = target.GetComponent<Health>();
         if (health != null)
             health.HealthCurrent -= Mathf.RoundToInt(Damage * multiplier);

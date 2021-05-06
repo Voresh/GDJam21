@@ -653,6 +653,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6026115864707919718, guid: d38b3dcc8e3329d448be4e0ff0210cdc, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 8dfe31d7116721643b400449c23b2edc, type: 3}
+    - target: {fileID: 7699237718797641781, guid: d38b3dcc8e3329d448be4e0ff0210cdc, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 8dfe31d7116721643b400449c23b2edc, type: 3}
     - target: {fileID: 8735586252465938552, guid: d38b3dcc8e3329d448be4e0ff0210cdc, type: 3}
       propertyPath: m_Name
       value: DeathWidget

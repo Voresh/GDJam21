@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Layers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2035
   Speed: 20
   Lifetime: 10
   Owner: {fileID: 0}
@@ -55,6 +55,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Range: 2
+  SplashDamageMultiplier: 0.5
 --- !u!1001 &53244131020487333
 PrefabInstance:
   m_ObjectHideFlags: 0

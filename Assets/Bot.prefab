@@ -21,6 +21,7 @@ MonoBehaviour:
   Speed: 2.5
   DetectionRadius: 10
   AttackRadius: 6
+  ModuleAttackRadius: 4.5
   TargetModules: []
   TargetPlayer: {fileID: 0}
   MoveToTarget: {fileID: 0}
@@ -28,6 +29,7 @@ MonoBehaviour:
   LevelLayer:
     serializedVersion: 2
     m_Bits: 1
+  RotationDamping: 20
 --- !u!1001 &6727855462364131389
 PrefabInstance:
   m_ObjectHideFlags: 0

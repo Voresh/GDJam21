@@ -46,7 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Layers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 2035
   Speed: 25
   Lifetime: 10
   Owner: {fileID: 0}
