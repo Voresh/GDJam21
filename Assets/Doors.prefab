@@ -72,6 +72,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -172,6 +176,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 2
@@ -274,6 +282,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -374,6 +386,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 2
@@ -476,6 +492,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -572,6 +592,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 1
@@ -670,6 +694,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -767,6 +795,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -863,6 +895,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 2
@@ -964,6 +1000,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4568155755481136969}
     m_Modifications:
+    - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
+      propertyPath: InitialRepairPrice
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 1887220005560220732, guid: 1437136157cbb7d43a4abfec3ac04622, type: 3}
       propertyPath: DoorsToActivate.Array.size
       value: 2

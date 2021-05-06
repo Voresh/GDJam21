@@ -20,7 +20,7 @@ MonoBehaviour:
   Sensor: {fileID: 3376980941601391386}
   Name: Reactor
   Description: Heart of starship
-  InitialRepairPrice: 15
+  InitialRepairPrice: 250
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -44,7 +44,7 @@ MonoBehaviour:
   Sensor: {fileID: 3119284288153001884}
   Name: Laboratory
   Description: Research center
-  InitialRepairPrice: 15
+  InitialRepairPrice: 50
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -143,7 +143,7 @@ MonoBehaviour:
   Sensor: {fileID: 895162653784143968}
   Name: Shields
   Description: Delays enemies waves
-  InitialRepairPrice: 15
+  InitialRepairPrice: 100
   PriceHeightOffset: 3
   Unlocked: 0
   Health: {fileID: 0}
@@ -168,7 +168,7 @@ MonoBehaviour:
   Sensor: {fileID: 1715745961300829615}
   Name: Warehouse
   Description: Spawns useful things
-  InitialRepairPrice: 15
+  InitialRepairPrice: 100
   PriceHeightOffset: 3
   Unlocked: 0
   Health: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   Sensor: {fileID: 1190590568802647540}
   Name: Weapon
   Description: Buffs your damage
-  InitialRepairPrice: 15
+  InitialRepairPrice: 100
   PriceHeightOffset: 3
   Unlocked: 0
   Health: {fileID: 0}
@@ -287,7 +287,7 @@ MonoBehaviour:
   Sensor: {fileID: 4761012259552182807}
   Name: Medical
   Description: Restores health
-  InitialRepairPrice: 15
+  InitialRepairPrice: 50
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -374,7 +374,7 @@ MonoBehaviour:
   Sensor: {fileID: 6585178702038995489}
   Name: Oxygen
   Description: Provides oxygen
-  InitialRepairPrice: 15
+  InitialRepairPrice: 50
   PriceHeightOffset: 3
   Unlocked: 1
   Health: {fileID: 0}
@@ -880,7 +880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: InitialRepairPrice
-      value: 15
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: Route.Array.data[0].Module
