@@ -33,11 +33,11 @@ public class MedicalModule : Module {
         PlayerController.Instance.transform.position = SpawnPoint.position;
         PlayerController.Instance.NavMeshAgent.enabled = true;
         
-        PlayerController.Instance.enabled = true;
-        
         PlayerController.Instance.Health.RestoreHealth();
 
         yield return new WaitForSeconds(1f);
+        
+        PlayerController.Instance.enabled = true;
     }
 
     protected override void UpdateEffects(bool active) {
