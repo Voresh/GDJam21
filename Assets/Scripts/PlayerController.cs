@@ -9,6 +9,7 @@ public class PlayerController : JamBase<PlayerController> {
     public float Speed = 4f;
     public Health Health;
     public BulletSpawner BulletSpawner;
+    public GameObject EquipdWeapon;
     private Transform _Transform;
     private static readonly int _Speed = Animator.StringToHash("Speed");
     public Vector3 Position => _Transform.position;
