@@ -11,15 +11,21 @@ public class CameraController : JamBase<CameraController> {
 
     void Start()
     {
-        transform.rotation = Quaternion.Euler(CameraRotation, 0, 0);
+        
+        Quaternion.Euler(CameraRotation, 0, 0);
     }
     
     void Update()
     {
+        var Target = PlayerController.Instance.NearbyTarget;
         var PlayerPosition = PlayerController.Instance.Position;
-        var CameraPosition = new Vector3(PlayerPosition.x, PlayerPosition.y + CameraHeight, PlayerPosition.z + CameraRange);
+        var CameraPosition = new Vector3(PlayerPosition.x, PlayerPosition.y + CameraHeight, PlayerPosition.z + CameraRange);    
         var distance = Vector3.Distance(transform.position, CameraPosition);
         var smoothTime = distance * (Time.deltaTime * Damping);
+        if (Target != null) {
+            CameraPosition = new Vector3(PlayerPosition.x, PlayerPosition.y + CameraHeight * 1.2f, PlayerPosition.z + CameraRange);
+            smoothTime = 0.3f;
+        }
 
         transform.position = Vector3.SmoothDamp(transform.position, CameraPosition, ref velocity, smoothTime);
 

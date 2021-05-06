@@ -24,7 +24,7 @@ public class PlayerController : JamBase<PlayerController> {
 
     public Vector3 TargetDirection;
     
-    private Collider NearbyTarget;
+    public Collider NearbyTarget;
     protected override void Awake() {
         base.Awake();
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
