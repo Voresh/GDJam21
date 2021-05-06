@@ -45,13 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 643e3888961e4194b20e245db8d243c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
   Renderer: {fileID: 294785357093003259}
-  Collider: {fileID: 0}
   NavMeshObstacle: {fileID: 5217759116246299110}
   ModulesToUnlock: []
   RespawnesToUnlock: []
   DoorsToActivate: []
   InitialRepairPrice: 5
+  PriceHeightOffset: 3.7
 --- !u!208 &5217759116246299110
 NavMeshObstacle:
   m_ObjectHideFlags: 0
