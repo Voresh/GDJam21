@@ -23,7 +23,9 @@ public class PlayerController : JamBase<PlayerController> {
     public float ResultSpeed => Speed + SpeedBuff;
 
     public Vector3 TargetDirection;
-    
+
+    public LayerMask LevelLayer;
+
     public Collider NearbyTarget;
     protected override void Awake() {
         base.Awake();
@@ -51,6 +53,14 @@ public class PlayerController : JamBase<PlayerController> {
         }
     }
 
+    private bool AttackAvailable(Transform _) {
+        var position = transform.position + Vector3.up;
+        var direction = Vector3.ProjectOnPlane((_.position - transform.position).normalized, Vector3.up);
+        var distance = Mathf.Min((_.position - transform.position).magnitude, AttackRadius);
+        Debug.DrawRay(position, direction * distance, Color.red);
+        return !Physics.Raycast(position, direction, distance, LevelLayer);
+    }
+
     private void Update() {
         if (Health.Dead)
             return;
@@ -60,12 +70,13 @@ public class PlayerController : JamBase<PlayerController> {
         if (TargetColliders.Length != 0)
         {
             var targets = TargetColliders
-                .Where(t => t.gameObject != gameObject && t.GetComponent<SecurityBot>() == null)
+                .Where(t => t.gameObject != gameObject 
+                    && t.GetComponent<SecurityBot>() == null 
+                    && AttackAvailable(t.transform))
                 .OrderBy(t => Vector3.Distance(t.transform.position, transform.position));
             NearbyTarget = targets.FirstOrDefault();
 
-            if (NearbyTarget == null)
-            {
+            if (NearbyTarget == null) {
                 BulletSpawner.enabled = false;
             }
             else
