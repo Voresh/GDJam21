@@ -90,10 +90,12 @@ public class Bot : MonoBehaviour {
 
     private string _Debug;
 
+#if UNITY_EDITOR
     private void OnDrawGizmos() {
         Handles.Label(transform.position, _Debug);
     }
-
+#endif
+    
     private bool AttackAvailable(Transform _) {
         var position = transform.position + Vector3.up;
         var direction = Vector3.ProjectOnPlane((_.position - transform.position).normalized, Vector3.up);
