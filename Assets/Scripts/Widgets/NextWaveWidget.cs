@@ -18,6 +18,6 @@ public class NextWaveWidget : MonoBehaviour {
     private void Update() {
         Text.text = BotSpawner.Instance.WaveInProgress
             ? $"Wave {BotSpawner.Instance.CurrentWave + 1} in progress" 
-            : $"Wave {BotSpawner.Instance.CurrentWave + 2} in: {Mathf.RoundToInt(BotSpawner.Instance.NextWaveTime)}";
+            : $"Wave {BotSpawner.Instance.CurrentWave + 2} in: <b>{Mathf.RoundToInt(BotSpawner.Instance.NextWaveTime)}</b>";
     }
 }
