@@ -1,5 +1,34 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4492209109881453749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8190671356311950341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9be1ea0f1f4d473b86b33374a28c2d89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 1883876828190676400}
+  NavMeshAgent: {fileID: 0}
+  Speed: 5
+  Health: {fileID: 8427765721377178369}
+  BulletSpawner: {fileID: 5222279398849932618}
+  WeaponHand: {fileID: 287258619125970072}
+  EquippedWeapon: {fileID: 2269791273808778790}
+  AttackRadius: 7
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  SpeedBuff: 0
+  TargetDirection: {x: 0, y: 0, z: 0}
+  LevelLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  NearbyTarget: {fileID: 0}
 --- !u!114 &6586260758422843815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,35 +135,6 @@ Transform:
   m_Father: {fileID: 1883876828183263750}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &-4492209109881453749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8190671356311950341}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9be1ea0f1f4d473b86b33374a28c2d89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Animator: {fileID: 1883876828190676400}
-  NavMeshAgent: {fileID: 0}
-  Speed: 5
-  Health: {fileID: 8427765721377178369}
-  BulletSpawner: {fileID: 5222279398849932618}
-  WeaponHand: {fileID: 287258619125970072}
-  EquippedWeapon: {fileID: 2269791273808778790}
-  AttackRadius: 7
-  EnemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  SpeedBuff: 0
-  TargetDirection: {x: 0, y: 0, z: 0}
-  LevelLayer:
-    serializedVersion: 2
-    m_Bits: 1
-  NearbyTarget: {fileID: 0}
 --- !u!1001 &1244164029340653097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -401,6 +401,10 @@ PrefabInstance:
     - target: {fileID: 7277735974797155093, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7327735730825696552, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: HeightOffset
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7327735730825696552, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: StartMaxHealth
