@@ -16,7 +16,7 @@ MonoBehaviour:
   RepairedView: {fileID: 7762166550764314072}
   DestroyedView: {fileID: 8331304850010770790}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
-  HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+  HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
   Sensor: {fileID: 3376980941601391386}
   Name: Reactor
   Description: Heart of starship
@@ -39,7 +39,7 @@ MonoBehaviour:
   RepairedView: {fileID: 7938825334957441374}
   DestroyedView: {fileID: 8505649672845185504}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
-  HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+  HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
   Sensor: {fileID: 3119284288153001884}
   Name: Laboratory
   Description: Research center
@@ -137,7 +137,7 @@ MonoBehaviour:
   RepairedView: {fileID: 5263004463566448290}
   DestroyedView: {fileID: 5850051019713820188}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
-  HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+  HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
   Sensor: {fileID: 895162653784143968}
   Name: Shields
   Description: Delays enemies waves
@@ -161,7 +161,7 @@ MonoBehaviour:
   RepairedView: {fileID: 5956642453937601389}
   DestroyedView: {fileID: 5371741040714607571}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
-  HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+  HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
   Sensor: {fileID: 1715745961300829615}
   Name: Warehouse
   Description: Spawns useful things
@@ -188,7 +188,7 @@ MonoBehaviour:
   RepairedView: {fileID: 6188052318953071414}
   DestroyedView: {fileID: 5604197611279135624}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
-  HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+  HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
   Sensor: {fileID: 1190590568802647540}
   Name: Weapon
   Description: Buffs your damage
@@ -278,7 +278,7 @@ MonoBehaviour:
   RepairedView: {fileID: 537951941329738965}
   DestroyedView: {fileID: 2256669225825897579}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
-  HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+  HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
   Sensor: {fileID: 4761012259552182807}
   Name: Medical
   Description: Restores health
@@ -365,7 +365,7 @@ MonoBehaviour:
   RepairedView: {fileID: 2163683026906844387}
   DestroyedView: {fileID: 441509973454445661}
   PriceBarPrefab: {fileID: 543955525815372604, guid: 0e0cd710671e92d459fbeb31df729d23, type: 3}
-  HealthBarPrefab: {fileID: 251068800662766243, guid: dacc171e03e514f448ad29dab538b5f6, type: 3}
+  HealthBarPrefab: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
   Sensor: {fileID: 6585178702038995489}
   Name: Oxygen
   Description: Provides oxygen
@@ -860,6 +860,10 @@ PrefabInstance:
       propertyPath: DestroyedView
       value: 
       objectReference: {fileID: 8916843169518875005}
+    - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
+      propertyPath: HealthBarPrefab
+      value: 
+      objectReference: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
     - target: {fileID: 1613702664, guid: 66a07c58266d3354db8cdb9d96cdeb0c, type: 3}
       propertyPath: RepairedAtStart
       value: 0

@@ -248,6 +248,10 @@ PrefabInstance:
       propertyPath: StartMaxHealth
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 7327735730825696552, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
+      propertyPath: HealthBarPrefab
+      value: 
+      objectReference: {fileID: 407559488504354069, guid: 4f74d5a1cb9de824fa5bff454df297d2, type: 3}
     - target: {fileID: 7335753689549055568, guid: 0b1fa8c2e4163ab48a0202e31bd4b3c9, type: 3}
       propertyPath: m_Layer
       value: 6
