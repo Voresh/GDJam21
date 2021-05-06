@@ -12,13 +12,13 @@ namespace Widgets {
         }
 
         private void Update() {
-            Button.gameObject.SetActive(ModulesController.Instance.ReadyToInteract);
-            Button.interactable = ModulesController.Instance.InteractionAvailable;
-            Text.text = ModulesController.Instance.InteractionAvailable ? "Repair" : "<color=red>Not enough points!</color>";
+            Button.gameObject.SetActive(RepairController.Instance.ReadyToInteract);
+            Button.interactable = RepairController.Instance.InteractionAvailable;
+            Text.text = RepairController.Instance.InteractionAvailable ? "Repair" : "<color=red>Not enough points!</color>";
         }
 
         private void OnClick() {
-            ModulesController.Instance.TryInteract();
+            RepairController.Instance.TryInteract();
         }
     }
 }

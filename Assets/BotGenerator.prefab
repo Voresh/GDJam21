@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1993638823802378141}
   - component: {fileID: 1993638823802378130}
   m_Layer: 0
-  m_Name: GameObject (4)
+  m_Name: Spawn5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993638823802378131}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.1, y: 0.51, z: -19.6}
+  m_LocalPosition: {x: -17.9, y: 0.51, z: -29.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993638825648169898}
@@ -55,12 +55,12 @@ GameObject:
   - component: {fileID: 1993638824171230222}
   - component: {fileID: 1993638824171230223}
   m_Layer: 0
-  m_Name: GameObject (2)
+  m_Name: Spawn3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1993638824171230222
 Transform:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993638824171230220}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.7, y: 0.51, z: 29.3}
+  m_LocalPosition: {x: 29.94, y: 0.51, z: -11.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993638825648169898}
@@ -99,12 +99,12 @@ GameObject:
   - component: {fileID: 1993638824381968221}
   - component: {fileID: 1993638824381968210}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: Spawn2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1993638824381968221
 Transform:
   m_ObjectHideFlags: 0
@@ -113,7 +113,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993638824381968211}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: 0.51, z: 14.7}
+  m_LocalPosition: {x: 13.62, y: 0.51, z: 0.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993638825648169898}
@@ -143,12 +143,12 @@ GameObject:
   - component: {fileID: 1993638824505942065}
   - component: {fileID: 1993638824505942070}
   m_Layer: 0
-  m_Name: GameObject (3)
+  m_Name: Spawn4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1993638824505942065
 Transform:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993638824505942071}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.6, y: 0.51, z: 12.8}
+  m_LocalPosition: {x: 12.03, y: 0.51, z: -26.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993638825648169898}
@@ -187,7 +187,7 @@ GameObject:
   - component: {fileID: 1993638825226998107}
   - component: {fileID: 1993638825226998104}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Spawn1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1993638825226998105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0.51, z: -17.95}
+  m_LocalPosition: {x: -18.02, y: 0.51, z: 0.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1993638825648169898}
@@ -269,7 +269,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BotPrefab: {fileID: 1002251909, guid: 335150f0032cc7e49879f25837c3345d, type: 3}
-  SpawnRate: 20
+  StartSpawnRate: 20
   SpawnPoints:
   - {fileID: 1993638825226998104}
   - {fileID: 1993638824381968210}
@@ -277,4 +277,7 @@ MonoBehaviour:
   - {fileID: 1993638824505942070}
   - {fileID: 1993638823802378130}
   CurrentWave: -1
-  BotsCount: 5
+  FirstWaveDelay: 10
+  CurrentWaveBots: []
+  SpawnRateBuff: 0
+  FirstWave: 1

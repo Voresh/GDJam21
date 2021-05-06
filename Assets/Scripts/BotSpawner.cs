@@ -52,7 +52,10 @@ public class BotSpawner : JamBase<BotSpawner> {
         if (NextWaveTime > 0f)
             return;
         CurrentWave++;
-        var bounds = SpawnPoints[UnityEngine.Random.Range(0, SpawnPoints.Count)].bounds;
+        var spawnPoints = SpawnPoints
+            .Where(_ => _.gameObject.activeSelf)
+            .ToList();
+        var bounds = spawnPoints[UnityEngine.Random.Range(0, spawnPoints.Count)].bounds;
         CurrentWaveBots.Clear();
         var botsCount = BotsCount;
         FirstWave = false;

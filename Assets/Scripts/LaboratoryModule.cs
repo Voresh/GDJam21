@@ -115,7 +115,7 @@ public class LaboratoryModule : Module {
                 PlayerController.Instance.BulletSpawner.GlobalDamageBuff = buff.Amount;
                 break;
             case LaboratoryBuffType.Repair:
-                ModulesController.Instance.GlobalRepairBuff = buff.Amount;
+                RepairController.Instance.GlobalRepairBuff = buff.Amount;
                 break;
             default: 
                 throw new ArgumentOutOfRangeException();

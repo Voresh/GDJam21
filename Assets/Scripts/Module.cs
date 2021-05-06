@@ -1,8 +1,9 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Health))]
-public class Module : MonoBehaviour {
+public class Module : MonoBehaviour, IRepairable {
     public bool RepairedAtStart = true;
     public GameObject RepairedView;
     public GameObject DestroyedView;
@@ -11,7 +12,8 @@ public class Module : MonoBehaviour {
     public Sensor Sensor;
     public string Name;
     public string Description;
-    public int RepairPrice;
+    [FormerlySerializedAs("RepairPrice")]
+    public int InitialRepairPrice;
     public float PriceHeightOffset = 2f;
     public bool Unlocked = true;
     
@@ -21,7 +23,9 @@ public class Module : MonoBehaviour {
     private bool _LastDeadStatus; //hack
     private bool _Initialized;
     
+    public Vector3 RepairablePosition => transform.position;
     public bool Repaired => !Health.Dead;
+    public int RepairPrice => InitialRepairPrice;
 
     private void Awake() {
         Health = GetComponent<Health>();
@@ -31,7 +35,7 @@ public class Module : MonoBehaviour {
         Health.onDeadStatusUpdated += OnDeadStatusUpdated;
         if (PriceBarPrefab != null) {
             _PriceBar = Instantiate(PriceBarPrefab);
-            _PriceBar.Price = ModulesController.Instance.GetRepairPrice(this);
+            _PriceBar.Price = RepairController.Instance.GetRepairPrice(this);
         }
         if (HealthBarPrefab != null) {
             _HealthBar = Instantiate(HealthBarPrefab);
@@ -63,7 +67,7 @@ public class Module : MonoBehaviour {
     private void Update() {
         if (_PriceBar != null) {
             _PriceBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
-            _PriceBar.Text.text = ModulesController.Instance.GetRepairPrice(this).ToString();
+            _PriceBar.Text.text = RepairController.Instance.GetRepairPrice(this).ToString();
         }
         if (_HealthBar != null) {
             _HealthBar.transform.position = transform.position + Vector3.up * PriceHeightOffset;
