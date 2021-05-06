@@ -15,7 +15,7 @@ public class WarehouseModule : Module {
 
     private void OnWaveStatusUpdated(bool active) {
         if (!active && Work && Aidkit == null) {
-            var Drop = Instantiate(DropItems[Random.Range(0, DropItems.Length - 1)]);
+            var Drop = Instantiate(DropItems[Random.Range(0, DropItems.Length)]);
             Drop.transform.position = DropPoint.position;
             Aidkit = Drop;
         }
